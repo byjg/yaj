@@ -18,5 +18,5 @@ yo('#some .selector').addClass('class').removeClass('otherclass').show();
 
 ## Documentation
 
-See the page [docs](docs) for a detailed documentation about yaj class.
+See the page [docs](docs/README.md) for a detailed documentation about yaj class.
 
