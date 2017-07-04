@@ -1,3 +1,7 @@
+// Yaj - Yet Another jQuery Replacement
+// http://yaj.byjg.com
+// (c) 2017 byjg
+
 if (!document.querySelectorAll) {
     document.querySelectorAll = function (selectors) {
         var style = document.createElement('style'), elements = [], element;
@@ -145,7 +149,6 @@ if (!window.yoSel) {
     };
 
     window.yoXhr = function() {
-        /* returns cross-browser XMLHttpRequest */
         try {
             return new XMLHttpRequest();
         } catch (e) {}
@@ -226,12 +229,6 @@ if (!window.yoSel) {
         return {left: curleft, top: curtop };
     };
 
-    /**
-     * ex. yoScrollTo(document.body, element.offsetTop, 2000);
-     * @param element
-     * @param to
-     * @param duration
-     */
     window.yoScrollTo = function (element, to, duration) {
         if (duration <= 0) return;
         var difference = to - element.scrollTop;
@@ -244,11 +241,6 @@ if (!window.yoSel) {
         }, 10);
     };
 
-    /**
-     * @param el Element
-     * @param type "in" or "out"
-     * @param ms Time in mileseconds
-     */
     window.yoFade = function (el, type, ms) {
         var isIn = type === 'in',
             opacity = isIn ? 0 : 1,
