@@ -9,3 +9,5 @@ If selector returns more than one, only the first will be returned.
 ```javascript
 yo('.myclass').el().clientWidth;
 ```
+
+Go to [index](README.md)

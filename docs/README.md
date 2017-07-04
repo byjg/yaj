@@ -1,4 +1,4 @@
-# Yat reference
+# Yaj reference
 
 ## Yo
 
