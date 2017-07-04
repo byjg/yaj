@@ -1,6 +1,36 @@
-# Yaj reference
+# Yaj - Yet Another jQuery Replacement
 
-## Yo
+## Basic usage
+
+The Yaj library like jQuery and Zepto exposes the "yo" instead "$".
+ 
+"yo" requires a selector and all methods are based on the element (or elements) returned.
+
+```javascript
+yo('selector').addClass('my-class');
+```
+
+The selector can be all valid HTML5:
+
+- ID (#name)
+- Class (.name)
+- Sequences ("#name #name2" OR ".name .name2" OR ".name #name2" and others)
+- More than one on the same object (".name.name2")
+- HTML Elements ("p", "div", etc)
+- HTML Document (document)
+- Window (window)
+
+You can call more than method in sequence:
+
+```javascript
+yo('selector').removeClass('oneclass').addClass('otherclass');
+```
+
+## Installation
+
+By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
+
+## Yo Reference
 
 - yo(selector).el() [ref](yaj-el.md) - Get the DOMElement defined by the selector
 - yo(selector).hasClass(class) [ref](yaj-hasclass.md) - Check if the selector has the class.
