@@ -117,11 +117,11 @@ if (!window.yoSel) {
         return yoIs(object, 'Array');
     };
 
-    window.yoIsDocument = function (functionToCheck) {
+    window.yoIsDocument = function (object) {
         return yoIs(object, 'HTML.*Document');
     };
 
-    window.yoIsHtmlElement = function (functionToCheck) {
+    window.yoIsHtmlElement = function (object) {
         return yoIs(object, 'HTML.*Element');
     };
 
