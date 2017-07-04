@@ -1,0 +1,21 @@
+# Yat reference
+
+- yo(selector).el() [ref](yat-el) - Get the DOMElement defined by the selector
+- yo(selector).hasClass(class) [ref](yat-hasclass) - Check if the selector has the class.
+- yo(selector).isVisible() [ref](yat-isvisible) - Return true if the selector exists.
+- yo(selector).addClass(class) [ref](yat-addclass) - Add a class to the selector
+- yo(selector).removeClass [ref](yat-removeclass) - Remove all classes from the selector
+- yo(selector).removeClass(class) [ref](yat-removeclass) - Remove a class from the selector
+- yo(selector).toggleClass(clsss) [ref](yat-toggleclass) - Add a class from the selector if it does not exists or remove otherwise
+- yo(selector).toggle() [ref](yat-toggle) - Alternate between show and hide
+- yo(selector).show() [ref](yat-show) - Make the selector visible
+- yo(selector).hide() [ref](yat-hide) - Make the selector invsible
+- yo(selector).append(data) [ref](yat-append) - Append a HTML or DOMElement to the selector
+- yo(selector).attr(property) [ref](yat-attr) - Get the property value of the selector
+- yo(selector).attr(property, value) [ref](yat-attr) - Set the property value into the selector;
+- yo(selector).css(property) [ref](yat-css) - Get the CSS style value of the selector
+- yo(selector).css(property, value) [ref](yat-css) - Set the CSS style value of the selector
+- yo(selector).html() [ref](yat-html) - Get the selector as HTML
+- yo(selector).html(data) [ref](yat-html) - Set the content of the selector with data
+- yo(selector).on(event, fn) [ref](yat-on) - Defines an event 
+- yo(selector).offset() [ref](yat-ref) - Get the offset of the selector

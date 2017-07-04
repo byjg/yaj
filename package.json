@@ -1,0 +1,36 @@
+{
+  "name": "yaj",
+  "version": "0.1.0",
+  "description": "Yet another jQuery replacement",
+  "main": "yaj.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/byjg/yaj.git"
+  },
+  "keywords": [
+    "jquery",
+    "jquery-replacement",
+    "polyfill"
+  ],
+  "author": "João Gilberto Magalhães",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byjg/yaj/issues"
+  },
+  "scripts": {
+    "minify-yaj": "./node_modules/.bin/uglifyjs --compress 'drop_console,drop_debugger' --mangle -o yaj.min.js yaj.js",
+    "minify": "npm run minify-yaj"
+  },
+  "dependencies": {
+    "xmlhttprequest": ">=1.8.0"
+  },
+  "devDependencies": {
+    "uglify-js": "3"
+  }
+}
