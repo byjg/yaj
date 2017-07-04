@@ -28,11 +28,17 @@ if (!document.querySelector) {
 
 if (!window.yoSel) {
     window.yoSel = function (selectors) {
-        return document.querySelector(selectors);
+        if (typeof selectors === "string") {
+            return document.querySelector(selectors);
+        }
+        return selectors;
     };
 
     window.yoSelAll = function (selectors) {
-        return document.querySelectorAll(selectors);
+        if (typeof selectors === "string") {
+            return document.querySelectorAll(selectors);
+        }
+        return [selectors];
     };
 
     window.yoGetScript = function (src, func) {
@@ -93,9 +99,30 @@ if (!window.yoSel) {
         }
     };
 
-    window.yoIsFunction = function (functionToCheck) {
+    window.yoIs = function (objectToCheck, type) {
         var getType = {};
-        return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
+        return objectToCheck
+            && getType.toString.call(objectToCheck).match(new RegExp('\\[object ' + type + '\\]')) !== null;
+    };
+
+    window.yoIsFunction = function (object) {
+        return yoIs(object, 'Function');
+    };
+
+    window.yoIsWindow = function (object) {
+        return yoIs(object, 'Window');
+    };
+
+    window.yoIsArray = function (object) {
+        return yoIs(object, 'Array');
+    };
+
+    window.yoIsDocument = function (functionToCheck) {
+        return yoIs(object, 'HTML.*Document');
+    };
+
+    window.yoIsHtmlElement = function (functionToCheck) {
+        return yoIs(object, 'HTML.*Element');
     };
 
     window.yoIsVisible = function (el) {
@@ -275,10 +302,10 @@ if (!window.yoSel) {
     };
 
     window.yo = function(element) {
-        return new Polyfill(element);
+        return new Yaj(element);
     };
 
-    var Polyfill = function (element) {
+    var Yaj = function (element) {
         this.element = yoSelAll(element);
         this.result = [];
 
@@ -382,6 +409,34 @@ if (!window.yoSel) {
         this.offset = function () {
             this._base('Offset');
             return this.result;
+        };
+
+        this.get = function (url, data, success, error) {
+            yoRequest('GET', url, data, success, error);
+        };
+
+        this.post = function (url, data, success, error) {
+            yoRequest('POST', url, data, success, error);
+        };
+
+        this.request = function (method, url, data, success, error) {
+            yoRequest(method, url, data, success, error);
+        };
+
+        this.getJson = function (url, data, success, error) {
+            yoGetJson(url, data, success, error);
+        };
+
+        this.postJson = function (url, data, success, error) {
+            yoPostJson(url, data, success, error);
+        };
+
+        this.getScript = function (src, func) {
+            yoGetScript(src, func)
+        };
+
+        this.scrollTo = function (to, duration) {
+            this._base('ScrollTo', to, duration);
         };
 
         return this;
