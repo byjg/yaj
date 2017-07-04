@@ -41,3 +41,7 @@
 - yoIsArray(object) [ref](yaj-yoisarray) -
 - yoIsDocument(object) [ref](yaj-isdocument) - 
 - yoIsHtmlElement(object) [ref](yaj-ishtmlelement) -
+
+## FAQ
+
+[Click here](faq)
