@@ -437,6 +437,17 @@ if (!window.yoSel) {
 
         this.scrollTo = function (to, duration) {
             this._base('ScrollTo', to, duration);
+            return this;
+        };
+
+        this.fadeIn = function (ms) {
+            this._base('Fade', 'in', ms);
+            return this;
+        };
+
+        this.fadeOut = function (ms) {
+            this._base('Fade', 'out', ms);
+            return this;
         };
 
         return this;

@@ -28,11 +28,13 @@
 - yo().postJson(url, data, success, error) [ref](yaj-postjson) - 
 - yo().getScript(src, func) [ref](yaj-getscript) - 
 - yo().scrollTo(to, duration) [ref](yaj-scrollto) - 
-
+- yo(selector).fadeIn(ms) [ref](yaj-fadein) - 
+- yo(selector).fadeOut(ms) [ref](yaj-fadeout) - 
 
 
 ## Utilities functions
 
+- yoXhr() [ref](yaj-yoxhr) -
 - yoIs(objectToCheck, type) [ref](yaj-yois) - 
 - yoIsFunction(object) [ref](yaj-yoisfunction) - 
 - yoIsWindow(object) [ref](yaj-yoiswindow) - 
