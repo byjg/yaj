@@ -20,7 +20,7 @@ The selector can be all valid HTML5:
 - HTML Document (document)
 - Window (window)
 
-You can call more than method in sequence:
+You can call more than one method in sequence:
 
 ```javascript
 yo('selector').removeClass('oneclass').addClass('otherclass');
@@ -50,27 +50,27 @@ By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 - yo(selector).html() [ref](yaj-html.md) - Get the selector as HTML
 - yo(selector).html(data) [ref](yaj-html.md) - Set the content of the selector with data
 - yo(selector).on(event, fn) [ref](yaj-on.md) - Defines an event 
-- yo(selector).offset() [ref](yaj-ref.md) - Get the offset of the selector
-- yo().get(url, data, success, error) [ref](yaj-get.md) - 
-- yo().post(url, data, success, error) [ref](yaj-post.md) - 
-- yo().request(method, url, data, success, error) [ref](yaj-request.md) - 
-- yo().getJson(url, data, success, error) [ref](yaj-getjson.md) - 
-- yo().postJson(url, data, success, error) [ref](yaj-postjson.md) - 
-- yo().getScript(src, func) [ref](yaj-getscript.md) - 
-- yo().scrollTo(to, duration) [ref](yaj-scrollto.md) - 
-- yo(selector).fadeIn(ms) [ref](yaj-fadein.md) - 
-- yo(selector).fadeOut(ms) [ref](yaj-fadeout.md) - 
+- yo(selector).offset() [ref](yaj-offset.md) - Get the offset of the selector
+- yo().get(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request
+- yo().post(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request
+- yo().request(method, url, data, success, error) [ref](yaj-request.md) - Make an ajax request. You can choose the method  
+- yo().getJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request and returns a JSON object.
+- yo().postJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request and returns a JSON object.
+- yo().getScript(src, func) [ref](yaj-getscript.md) - Load a javascript
+- yo(selector).scrollTo(to, duration) [ref](yaj-scrollto.md) - Scroll the object.
+- yo(selector).fadeIn(ms) [ref](yaj-fade.md) - Fade in the element
+- yo(selector).fadeOut(ms) [ref](yaj-fade.md) - Fade out the element
 
 
 ## Utilities functions
 
-- yoXhr() [ref](yaj-yoxhr.md) -
-- yoIs(objectToCheck, type) [ref](yaj-yois.md) - 
-- yoIsFunction(object) [ref](yaj-yoisfunction.md) - 
-- yoIsWindow(object) [ref](yaj-yoiswindow.md) - 
-- yoIsArray(object) [ref](yaj-yoisarray.md) -
-- yoIsDocument(object) [ref](yaj-isdocument.md) - 
-- yoIsHtmlElement(object) [ref](yaj-ishtmlelement.md) -
+- yoXhr() [ref](yaj-yoxhr.md) - Return a XmlHTTPRequest object for your current environment/browser;
+- yoIsFunction(object) [ref](yaj-yois.md) - Check if the object is a function. 
+- yoIsWindow(object) [ref](yaj-yois.md) - Check if the object is the Window.
+- yoIsArray(object) [ref](yaj-yois.md) - Check if the object is an Array.
+- yoIsDocument(object) [ref](yaj-yois.md) - Check if the object is the HTMLDocument element.
+- yoIsHtmlElement(object) [ref](yaj-yois.md) - Check if the object is a HTMLElement.
+- yoIs(objectToCheck, type) [ref](yaj-yois.md) - Check if the object is of the defined type.
 
 ## FAQ
 

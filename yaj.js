@@ -206,8 +206,10 @@ if (!window.yoSel) {
 
     window.yoAppend = function (el, str) {
         if (typeof str !== "string") {
-            el.append(str);
-            return;
+            if (typeof str === Yaj) {
+                return el.append(str.el());
+            }
+            return el.append(str);
         }
 
         var wrapper = document.createElement('div');
