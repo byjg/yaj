@@ -45,16 +45,6 @@ if (!window.yoSel) {
         return [selectors];
     };
 
-    window.yoGetScript = function (src, func) {
-        var script = document.createElement('script');
-        script.async = "async";
-        script.src = src;
-        if (func) {
-            script.onload = func;
-        }
-        document.getElementsByTagName("head")[0].appendChild(script);
-    };
-
     window.yoHasClass = function (el, className)
     {
         if (el.classList)
@@ -170,40 +160,6 @@ if (!window.yoSel) {
         throw new Error("This browser does not support XMLHttpRequest.");
     };
 
-    window.yoGet = function (url, data, success, error) {
-        yoRequest('GET', url, data, success, error);
-    };
-
-    window.yoPost = function (url, data, success, error) {
-        yoRequest('POST', url, data, success, error);
-    };
-
-    window.yoRequest = function (method, url, data, success, error) {
-        var xhr = new yoXhr();
-        xhr.open(method, url, true);
-        xhr.onreadystatechange = function () {
-            if (this.readyState !== 4) return;
-            if (this.status !== 200) {
-                yoIsFunction(error) && error(this.responseText)
-            } else {
-                yoIsFunction(success) && success(this.responseText)
-            }
-        };
-        xhr.send(data);
-    };
-
-    window.yoGetJson = function (url, data, success, error) {
-        yoGet(url, data, function (result) {
-            success(JSON.parse(result));
-        }, error);
-    };
-
-    window.yoPostJson = function (url, data, success, error) {
-        yoPost(url, data, function (result) {
-            success(JSON.parse(result));
-        }, error);
-    };
-
     window.yoAppend = function (el, str) {
         if (typeof str !== "string") {
             if (typeof str === Yaj) {
@@ -300,7 +256,13 @@ if (!window.yoSel) {
     };
 
     var Yaj = function (element) {
-        this.element = yoSelAll(element);
+
+        if (typeof element === "string") {
+            this.element = document.querySelectorAll(element);
+        } else {
+            this.element = [element];
+        }
+
         this.result = [];
 
         this.el = function () {
@@ -406,27 +368,64 @@ if (!window.yoSel) {
         };
 
         this.get = function (url, data, success, error) {
-            yoRequest('GET', url, data, success, error);
+            this.request({
+                method: 'GET',
+                url: url,
+                data: data,
+                success: success,
+                error: error
+            });
         };
 
         this.post = function (url, data, success, error) {
-            yoRequest('POST', url, data, success, error);
+            this.request({
+                method: 'POST',
+                url: url,
+                data: data,
+                success: success,
+                error: error
+            });
         };
 
-        this.request = function (method, url, data, success, error) {
-            yoRequest(method, url, data, success, error);
+        this.request = function (options) {
+            var xhr = new yoXhr();
+            xhr.open(options.method, options.url, true);
+            if (options.headers) {
+                for (var key in options.headers) {
+                    xhr.setRequestHeader(key, options.headers[key]);
+                }
+            }
+            xhr.onreadystatechange = function () {
+                if (this.readyState !== 4) return;
+                if (this.status !== 200) {
+                    yoIsFunction(options.error) && options.error(this.responseText, this.statusText, this)
+                } else {
+                    yoIsFunction(options.success) && options.success(this.responseText, this.statusText, this)
+                }
+            };
+            xhr.send(options.data);
         };
 
         this.getJson = function (url, data, success, error) {
-            yoGetJson(url, data, success, error);
+            this.get(url, data, function (result) {
+                success(JSON.parse(result));
+            }, error);
         };
 
         this.postJson = function (url, data, success, error) {
-            yoPostJson(url, data, success, error);
+            this.post(url, data, function (result) {
+                success(JSON.parse(result));
+            }, error);
         };
 
         this.getScript = function (src, func) {
-            yoGetScript(src, func)
+            var script = document.createElement('script');
+            script.async = "async";
+            script.src = src;
+            if (func) {
+                script.onload = func;
+            }
+            document.getElementsByTagName("head")[0].appendChild(script);
         };
 
         this.scrollTo = function (to, duration) {

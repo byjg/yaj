@@ -3,17 +3,18 @@
 Makes an ajax request
 
 ```javascript
-yo().request(
-    'PUT',
-    'http://someurl',
-    { payload: "value" },
-    function (data) {
+yo().request({
+    method: 'PUT',
+    url: 'http://someurl',
+    headers: {},
+    data: { payload: "value" },
+    success: function (data, status, info) {
         console.log('Success!' + data);
     },
-    function (data) {
+    error: function (data, status, info) {
         console.log('Error!' + data);
     }
-);
+});
 ```
 ## yo().get(url, data, success, error) 
 
