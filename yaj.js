@@ -96,7 +96,9 @@ if (!window.yoSel) {
     window.yoIs = function (objectToCheck, type) {
         var getType = {};
         return objectToCheck
-            && getType.toString.call(objectToCheck).match(new RegExp('\\[object ' + type + '\\]')) !== null;
+            && (getType.toString.call(objectToCheck).match(new RegExp('\\[object ' + type + '\\]')) !== null
+                || objectToCheck.constructor.name.match(new RegExp(type)) !== null
+            );
     };
 
     window.yoIsFunction = function (object) {
@@ -119,11 +121,23 @@ if (!window.yoSel) {
         return yoIs(object, 'HTML.*Element');
     };
 
+    window.yoIsYaj = function (object) {
+        return yoIs(object, 'Yaj');
+    };
+
     window.yoIsVisible = function (el) {
         if (el === undefined || el === null) {
             return false;
         }
         return !!( el.offsetWidth || el.offsetHeight || el.getClientRects().length );
+    };
+
+    window.yoIsDefined = function (el) {
+        return el !== undefined && el !== null;
+    };
+
+    window.yoIsEmpty = function (el) {
+        return !yoIsDefined(el) || el === ""
     };
 
     window.yoOn = function (el, event, fn) {
@@ -174,6 +188,32 @@ if (!window.yoSel) {
         for (var i=0; i<children.length; i++) {
             el.append(children[i]);
         }
+    };
+
+    window.yoAppendTo = function (elSrc, elDest) {
+        yoAppend(elDest, elSrc);
+    };
+
+    window.yoCollideWith = function (elSrc, elDest) {
+        if (!yoIsDefined(elSrc) || !yoIsDefined(elDest)) {
+            return false;
+        }
+
+        if (yoIsYaj(elSrc)) {
+            elSrc = elSrc.el();
+        }
+        if (yoIsYaj(elDest)) {
+            elDest = elDest.el();
+        }
+
+        var rect1 = elSrc.getBoundingClientRect();
+        var rect2 = elDest.getBoundingClientRect();
+
+        return !(rect1.top > rect2.bottom
+            || rect1.right < rect2.left
+            || rect1.bottom < rect2.top
+            || rect1.left > rect2.right
+        );
     };
 
     window.yoOffset = function (el) {
@@ -331,6 +371,15 @@ if (!window.yoSel) {
         this.append = function (data) {
             this._base('Append', data);
             return this;
+        };
+
+        this.appendTo = function (data) {
+            this._base('AppendTo', data);
+            return this;
+        };
+
+        this.collideWith = function (data) {
+            return this._base('CollideWith', data);
         };
 
         this.attr = function (property, value) {
