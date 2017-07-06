@@ -9,7 +9,7 @@
   "scripts": {
     "minify-yaj": "./node_modules/.bin/uglifyjs --compress 'drop_console,drop_debugger' --comments saveLicense --mangle -o yaj.min.js yaj.js",
     "minify": "npm run minify-yaj",
-    "publish-patch": "npm run minify && npm version patch && git push && npm publish"
+    "publish-patch": "npm run minify && git commit -m 'Close changes for new version' && npm version patch && git push && npm publish"
   },
   "repository": {
     "type": "git",
