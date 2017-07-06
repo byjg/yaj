@@ -33,6 +33,9 @@ By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 ## Yo Dom Manipulation Reference
 
 - yo(selector).el() [ref](yaj-el.md) - Get the DOMElement defined by the selector
+- yo(selector).els() [ref](yaj-els.md) - Get all DOMElements defined by the selector
+- yo(selector).els(n) [ref](yaj-els.md) - Get the n-nth DOMElement defined by the selector
+- yo(selector).eq(n) [ref](yaj-eq.md) - Get the n-nth Yaj object defined by the selector;
 - yo(selector).hasClass(class) [ref](yaj-hasclass.md) - Check if the selector has the class.
 - yo(selector).isVisible() [ref](yaj-isvisible.md) - Return true if the 'selector exists.
 - yo(selector).addClass(class) [ref](yaj-addclass.md) - Add a class to the selector
@@ -43,6 +46,7 @@ By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 - yo(selector).show() [ref](yaj-show.md) - Make the selector visible
 - yo(selector).hide() [ref](yaj-hide.md) - Make the selector invsible
 - yo(selector).append(data) [ref](yaj-append.md) - Append a HTML or DOMElement to the selector
+- yo(selector).collideWith(data) [ref](yaj-collidewith.md) - Return true if the object collides/overlaps the object referenced by data
 - yo(selector).attr(property) [ref](yaj-attr.md) - Get the property value of the selector
 - yo(selector).attr(property, value) [ref](yaj-attr.md) - Set the property value into the selector;
 - yo(selector).css(property) [ref](yaj-css.md) - Get the CSS style value of the selector
@@ -73,7 +77,11 @@ By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 - yoIsArray(object) [ref](yaj-yois.md) - Check if the object is an Array.
 - yoIsDocument(object) [ref](yaj-yois.md) - Check if the object is the HTMLDocument element.
 - yoIsHtmlElement(object) [ref](yaj-yois.md) - Check if the object is a HTMLElement.
+- yoIsYaj(object) [ref](yaj-yois.md) - Check if the object is an Yaj object
 - yoIs(objectToCheck, type) [ref](yaj-yois.md) - Check if the object is of the defined type.
+- yoCopy(source, dest) [ref](yaj-yocopy.md) - Copy the attributes from one object to another.
+- yoClone(object) [ref](yaj-yoclone.md) - Clone an object;
+
 
 ## FAQ
 

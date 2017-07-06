@@ -60,5 +60,16 @@ if (yoIsHtmlElement(object)) {
 }
 ```
 
+## yoIsYaj(object)
+
+Check if the object is a Yaj object. 
+This is a shortcut for `yoIs(object, 'Yaj')`;
+
+```javascript
+if (yoIsYaj(object)) {
+    // do something
+}
+```
+
 
 Go to [index](README.md)
