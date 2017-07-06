@@ -4,7 +4,7 @@ Return true if an object collides or overlaps the object defined by data
 
 ```javascript
 // Add a string HTML 
-yo('.myclass').collideWith(yo('.other'));
+yo('.myclass').isCollideWith(yo('.other'));
 ```
 
 Go to [index](README.md)

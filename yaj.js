@@ -254,7 +254,14 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
-        this.collideWith = function (data) {
+        this.remove = function () {
+            this._base(function (el) {
+                el.parentNode.removeChild(el);
+            });
+            return this;
+        };
+
+        this.isCollideWith = function (data) {
             return this._base(function (elSrc, elDest) {
                 if (elSrc !== undefined || elDest !== undefined) {
                     return false;

@@ -46,7 +46,8 @@ By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 - yo(selector).show() [ref](yaj-show.md) - Make the selector visible
 - yo(selector).hide() [ref](yaj-hide.md) - Make the selector invsible
 - yo(selector).append(data) [ref](yaj-append.md) - Append a HTML or DOMElement to the selector
-- yo(selector).collideWith(data) [ref](yaj-collidewith.md) - Return true if the object collides/overlaps the object referenced by data
+- yo(selector).remove() [ref](yaj-remove.md) - Remove the DOM Elements defined by the selector
+- yo(selector).isCollideWith(data) [ref](yaj-iscollidewith.md) - Return true if the object collides/overlaps the object referenced by data
 - yo(selector).attr(property) [ref](yaj-attr.md) - Get the property value of the selector
 - yo(selector).attr(property, value) [ref](yaj-attr.md) - Set the property value into the selector;
 - yo(selector).css(property) [ref](yaj-css.md) - Get the CSS style value of the selector
