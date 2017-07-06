@@ -1,6 +1,6 @@
 ## yo().request(method, url, data, success, error) 
 
-Makes an ajax request
+Makes an ajax request. This is the most customizable option. 
 
 ```javascript
 yo().request({

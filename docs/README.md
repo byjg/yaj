@@ -10,11 +10,11 @@ The Yaj library like jQuery and Zepto exposes the "yo" instead "$".
 yo('selector').addClass('my-class');
 ```
 
-The selector can be all valid HTML5:
+The selector can be all valid HTML5 selector:
 
-- ID (#name)
+- Element Id (#name)
 - Class (.name)
-- Sequences ("#name #name2" OR ".name .name2" OR ".name #name2" and others)
+- Sequences ("#name #name2" OR ".name .name2" OR ".name #name2" and other combination)
 - More than one on the same object (".name.name2")
 - HTML Elements ("p", "div", etc)
 - HTML Document (document)
@@ -30,7 +30,7 @@ yo('selector').removeClass('oneclass').addClass('otherclass');
 
 By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 
-## Yo Reference
+## Yo Dom Manipulation Reference
 
 - yo(selector).el() [ref](yaj-el.md) - Get the DOMElement defined by the selector
 - yo(selector).hasClass(class) [ref](yaj-hasclass.md) - Check if the selector has the class.
@@ -51,18 +51,21 @@ By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 - yo(selector).html(data) [ref](yaj-html.md) - Set the content of the selector with data
 - yo(selector).on(event, fn) [ref](yaj-on.md) - Defines an event 
 - yo(selector).offset() [ref](yaj-offset.md) - Get the offset of the selector
-- yo().get(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request
-- yo().post(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request
-- yo().request(method, url, data, success, error) [ref](yaj-request.md) - Make an ajax request. You can choose the method  
-- yo().getJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request and returns a JSON object.
-- yo().postJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request and returns a JSON object.
-- yo().getScript(src, func) [ref](yaj-getscript.md) - Load a javascript
 - yo(selector).scrollTo(to, duration) [ref](yaj-scrollto.md) - Scroll the object.
 - yo(selector).fadeIn(ms) [ref](yaj-fade.md) - Fade in the element
 - yo(selector).fadeOut(ms) [ref](yaj-fade.md) - Fade out the element
 
+## Yo Ajax Reference
 
-## Utilities functions
+- yo().get(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request
+- yo().post(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request
+- yo().request(options) [ref](yaj-request.md) - Make an ajax request. You can choose the method  
+- yo().getJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request and returns a JSON object.
+- yo().postJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request and returns a JSON object.
+- yo().getScript(src, func) [ref](yaj-getscript.md) - Load a javascript
+
+
+## Yo Utilities functions
 
 - yoXhr() [ref](yaj-yoxhr.md) - Return a XmlHTTPRequest object for your current environment/browser;
 - yoIsFunction(object) [ref](yaj-yois.md) - Check if the object is a function. 
