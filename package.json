@@ -8,7 +8,8 @@
   },
   "scripts": {
     "minify-yaj": "./node_modules/.bin/uglifyjs --compress 'drop_console,drop_debugger' --comments saveLicense --mangle -o yaj.min.js yaj.js",
-    "minify": "npm run minify-yaj"
+    "minify": "npm run minify-yaj",
+    "publish-patch": "npm version patch && git push && npm publish"
   },
   "repository": {
     "type": "git",
