@@ -26,9 +26,13 @@ You can call more than one method in sequence:
 yo('selector').removeClass('oneclass').addClass('otherclass');
 ```
 
+## Lightweight
+
+Yaj is also lightweigth. Yaj have less than 18kb uncompressed, 8kb minified and **3kb minified and gzipped**. 
+
 ## Installation
 
-By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
+By adding to your page the "yaj.min.js" or through "npm" or "yarn add yaj"
 
 ## Yo Dom Manipulation Reference
 
@@ -69,8 +73,29 @@ By adding to your browser "yaj.min.js" or through "npm" or "yarn add yaj"
 - yo().postJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request and returns a JSON object.
 - yo().getScript(src, func) [ref](yaj-getscript.md) - Load a javascript
 
+## Yo Polyfill replacement
 
-## Yo Utilities functions
+Yaj creates polyfill replacement for important DOM implementations like:
+
+- document.querySelector
+- document.querySelectorAll
+- window.localStorage (in this case the fallback is cookie which have some limitations about size and quantity)
+
+If you add the `yaj.js` or `yaj.min.js` to your page, you can instantly use this implementations. The code below will
+work in the most modern broswers but also in browsers like IE8 and even IE7. 
+
+```html
+<head>
+    <script src="yaj.js"></script>
+</head>
+
+<script>
+localStorage.setItem('key', 'value');
+console.log(localStorage.getItem('key'));
+</script>
+```
+
+## Yo Polyfill Utilities functions
 
 - yoXhr() [ref](yaj-yoxhr.md) - Return a XmlHTTPRequest object for your current environment/browser;
 - yoIsFunction(object) [ref](yaj-yois.md) - Check if the object is a function. 
