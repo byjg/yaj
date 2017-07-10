@@ -30,31 +30,40 @@ if (!document.querySelector) {
     };
 }
 
-if (!window.localStorage) {
+try {
+    var storage = window['localStorage'],
+        x = '__storage_test__';
+    storage.setItem(x, x);
+    storage.removeItem(x);
+}
+catch(e) {
+    window.yajls = 'yajls_';
     window.localStorage = {
         getItem: function (sKey) {
             if (!sKey || !this.hasOwnProperty(sKey)) { return null; }
-            return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
+            return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + yajls + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
         },
         key: function (nKeyId) {
-            return unescape(document.cookie.replace(/\s*\=(?:.(?!;))*$/, "").split(/\s*\=(?:[^;](?!;))*[^;]?;\s*/)[nKeyId]);
+            var regex = new RegExp(yajls + '(.*?)\=', 'g');
+            var keys = document.cookie.match(regex);
+            return unescape(keys[nKeyId]).replace(regex, '$1');
         },
         setItem: function (sKey, sValue) {
             if(!sKey) { return; }
-            document.cookie = escape(sKey) + "=" + escape(sValue) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+            document.cookie = yajls + escape(sKey) + "=" + escape(sValue) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
             this.length = document.cookie.match(/\=/g).length;
         },
         length: 0,
         removeItem: function (sKey) {
             if (!sKey || !this.hasOwnProperty(sKey)) { return; }
-            document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+            document.cookie = yajls + escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
             this.length--;
         },
         hasOwnProperty: function (sKey) {
-            return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+            return (new RegExp("(?:^|;\\s*)" + yajls + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
         }
     };
-    window.localStorage.length = (document.cookie.match(/\=/g) || window.localStorage).length;
+    window.localStorage.length = (document.cookie.match(new RegExp(yajls + '(.*?)\=', 'g')) || window.localStorage).length;
 }
 
 if (typeof Yaj === "undefined") {
