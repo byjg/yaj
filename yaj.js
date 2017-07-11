@@ -1,7 +1,9 @@
-// Yaj - Yet Another jQuery Replacement
-// http://yaj.byjg.com
-// (c) 2017 byjg
+//! Yaj - Yet Another jQuery Replacement
+//! http://opensource.byjg.com/yaj
 
+/**
+ * Polyfill for querySelectorAll
+ */
 if (!document.querySelectorAll) {
     document.querySelectorAll = function (selectors) {
         var style = document.createElement('style'), elements = [], element;
@@ -23,6 +25,9 @@ if (!document.querySelectorAll) {
     };
 }
 
+/**
+ * Polyfill for document.querySelector
+ */
 if (!document.querySelector) {
     document.querySelector = function (selectors) {
         var elements = document.querySelectorAll(selectors);
@@ -30,6 +35,9 @@ if (!document.querySelector) {
     };
 }
 
+/**
+ * Polyfill for window.localStorage
+ */
 try {
     var storage = window['localStorage'],
         x = '__storage_test__';
@@ -66,8 +74,16 @@ catch(e) {
     window.localStorage.length = (document.cookie.match(new RegExp(yajLocalStorage + '(.*?)\=', 'g')) || window.localStorage).length;
 }
 
+/**
+ * Starting defining Yaj
+ */
 if (typeof Yaj === "undefined") {
 
+    /**
+     * @param objectToCheck
+     * @param type
+     * @returns {boolean}
+     */
     window.yoIs = function (objectToCheck, type) {
         var getType = {};
         return objectToCheck
@@ -100,6 +116,10 @@ if (typeof Yaj === "undefined") {
         return yoIs(object, 'Yaj');
     };
 
+    /**
+     *
+     * @returns {XMLHttpRequest}
+     */
     window.yoXhr = function() {
         try {
             return new XMLHttpRequest();
@@ -133,7 +153,7 @@ if (typeof Yaj === "undefined") {
     };
 
     window.yoClone = function(obj) {
-        if (null == obj || "object" != typeof obj) return obj;
+        if (null === obj || "object" !== typeof obj) return obj;
         var copy = obj.constructor();
         for (var attr in obj) {
             if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
@@ -151,10 +171,18 @@ if (typeof Yaj === "undefined") {
 
         this.result = [];
 
+        /**
+         * @returns {HTMLElement}
+         */
         this.el = function () {
             return this.els(0);
         };
 
+        /**
+         *
+         * @param n
+         * @returns {HTMLElement}
+         */
         this.els = function(n) {
             if (this.element === null || this.element === undefined) {
                 return null;
@@ -186,10 +214,20 @@ if (typeof Yaj === "undefined") {
             return bool;
         };
 
+        /**
+         *
+         * @param n
+         * @returns {Yaj}
+         */
         this.eq = function (n) {
             return yo(this.els(n));
         };
 
+        /**
+         *
+         * @param className
+         * @returns {boolean}
+         */
         this.hasClass = function (className) {
             return this._base(function (el, className) {
                 if (el.classList)
@@ -198,6 +236,9 @@ if (typeof Yaj === "undefined") {
             }, className);
         };
 
+        /**
+         * @returns {boolean}
+         */
         this.isVisible = function () {
             return this._base(function (el) {
                 if (el === undefined || el === null) {
@@ -207,6 +248,11 @@ if (typeof Yaj === "undefined") {
             });
         };
 
+        /**
+         *
+         * @param className
+         * @returns {Yaj}
+         */
         this.addClass = function(className) {
             this._base(function(el, className) {
                 if (el.classList) {
@@ -218,6 +264,11 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @param className
+         * @returns {Yaj}
+         */
         this.removeClass = function(className) {
             this._base(function (el, className)
             {
@@ -236,6 +287,11 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @param className
+         * @returns {Yaj}
+         */
         this.toggleClass = function(className) {
             this._base(function (el, className) {
                 var me = yo(el);
@@ -248,6 +304,10 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @returns {Yaj}
+         */
         this.toggle = function() {
             this._base(function (el) {
                 var me = yo(el);
@@ -260,16 +320,29 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @returns {Yaj}
+         */
         this.show = function () {
             this.fadeIn(200);
             return this;
         };
 
+        /**
+         *
+         * @returns {Yaj}
+         */
         this.hide = function () {
             this.fadeOut(200);
             return this;
         };
 
+        /**
+         *
+         * @param data
+         * @returns {Yaj}
+         */
         this.append = function (data) {
             this._base(function (el, data) {
                 var children;
@@ -290,6 +363,10 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @returns {Yaj}
+         */
         this.remove = function () {
             this._base(function (el) {
                 el.parentNode.removeChild(el);
@@ -297,6 +374,11 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @param data
+         * @returns {boolean}
+         */
         this.isCollideWith = function (data) {
             return this._base(function (elSrc, elDest) {
                 if (elSrc !== undefined || elDest !== undefined) {
@@ -323,6 +405,12 @@ if (typeof Yaj === "undefined") {
             }, data);
         };
 
+        /**
+         *
+         * @param property
+         * @param value
+         * @returns {*}
+         */
         this.attr = function (property, value) {
             this._base(function (el, prop, value) {
                 if (value === undefined || value === null) {
@@ -337,6 +425,12 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @param property
+         * @param value
+         * @returns {*}
+         */
         this.css = function (property, value) {
             this._base(function (el, prop, value) {
                 if (value === undefined || value === null) {
@@ -351,6 +445,11 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @param value
+         * @returns {*}
+         */
         this.html = function (value) {
             this._base(function (el, value) {
                 if (value === undefined || value === null) {
@@ -365,6 +464,12 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @param event
+         * @param fn
+         * @returns {Yaj}
+         */
         this.on = function (event, fn) {
             this._base(function (el, event, fn) {
                 if(el.attachEvent) {
@@ -380,6 +485,10 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @returns {Array}
+         */
         this.offset = function () {
             this._base(function (el) {
                 var curleft = 0;
@@ -395,6 +504,13 @@ if (typeof Yaj === "undefined") {
             return this.result;
         };
 
+        /**
+         *
+         * @param url
+         * @param data
+         * @param success
+         * @param error
+         */
         this.get = function (url, data, success, error) {
             this.request({
                 method: 'GET',
@@ -405,6 +521,13 @@ if (typeof Yaj === "undefined") {
             });
         };
 
+        /**
+         *
+         * @param url
+         * @param data
+         * @param success
+         * @param error
+         */
         this.post = function (url, data, success, error) {
             this.request({
                 method: 'POST',
@@ -415,6 +538,10 @@ if (typeof Yaj === "undefined") {
             });
         };
 
+        /**
+         *
+         * @param options
+         */
         this.request = function (options) {
             var xhr = new yoXhr();
             xhr.open(options.method, options.url, true);
@@ -434,18 +561,37 @@ if (typeof Yaj === "undefined") {
             xhr.send(options.data);
         };
 
+        /**
+         *
+         * @param url
+         * @param data
+         * @param success
+         * @param error
+         */
         this.getJson = function (url, data, success, error) {
             this.get(url, data, function (result) {
                 success(JSON.parse(result));
             }, error);
         };
 
+        /**
+         *
+         * @param url
+         * @param data
+         * @param success
+         * @param error
+         */
         this.postJson = function (url, data, success, error) {
             this.post(url, data, function (result) {
                 success(JSON.parse(result));
             }, error);
         };
 
+        /**
+         *
+         * @param src
+         * @param func
+         */
         this.getScript = function (src, func) {
             var script = document.createElement('script');
             script.async = "async";
@@ -456,6 +602,12 @@ if (typeof Yaj === "undefined") {
             document.getElementsByTagName("head")[0].appendChild(script);
         };
 
+        /**
+         *
+         * @param to
+         * @param duration
+         * @returns {Yaj}
+         */
         this.scrollTo = function (to, duration) {
             this._base(function (element, to, duration) {
                 if (duration <= 0) return;
@@ -471,6 +623,11 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        /**
+         *
+         * @param type
+         * @param ms
+         */
         this.fade = function (type, ms) {
             this._base(function (el, type, ms) {
                 var isIn = type === 'in',
@@ -496,11 +653,21 @@ if (typeof Yaj === "undefined") {
             }, type, ms)
         };
 
+        /**
+         *
+         * @param ms
+         * @returns {Yaj}
+         */
         this.fadeIn = function (ms) {
             this.fade('in', ms);
             return this;
         };
 
+        /**
+         *
+         * @param ms
+         * @returns {Yaj}
+         */
         this.fadeOut = function (ms) {
             this.fade('out', ms);
             return this;
