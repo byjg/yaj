@@ -9,6 +9,13 @@ I create the YAJ for two reasons:
 
 Because of this I resolve to create my own library.
 
+### What does mean YAJ?
+
+Yaj is a acronymum for "Yet Another jQuery replacement". 
+But Yaj is also spin quickly in a pirouette and then snap and point at a person, uttering the greeting, "yo."
+
+Because of this the main class is "yo".
+
 ### Why width(), height() and other are not implemented?
 
 The main objective of this library is not to *recreate* all jQuery features but
