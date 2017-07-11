@@ -7,6 +7,7 @@
     "example": "examples"
   },
   "scripts": {
+    "test": "./node_modules/.bin/jest",
     "minify-yaj": "./node_modules/.bin/uglifyjs --compress 'drop_console,drop_debugger' --comments '/^!/i' --source-map --mangle -o yaj.min.js yaj.js",
     "minify": "npm run minify-yaj",
     "publish-patch": "npm run minify && git add yaj.min.js && git commit -m 'Close changes for new version' && npm version patch && git push && npm publish"
@@ -26,9 +27,10 @@
     "url": "https://github.com/byjg/yaj/issues"
   },
   "dependencies": {
-    "xmlhttprequest": ">=1.8.0"
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
-    "uglify-js": "^3.0.24"
+    "uglify-js": "^3.0.24",
+    "jest": "^20.0.1"
   }
 }

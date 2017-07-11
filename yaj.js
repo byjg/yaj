@@ -353,11 +353,11 @@ if (typeof Yaj === "undefined") {
                 } else if (yoIsYaj(data)) {
                     children = data.element;
                 } else {
-                    return el.append(data);
+                    return el.appendChild(data);
                 }
 
                 for (var i=0; i<children.length; i++) {
-                    el.append(children[i].cloneNode(true));
+                    el.appendChild(children[i].cloneNode(true));
                 }
             }, data);
             return this;
