@@ -32,7 +32,19 @@ Yaj is also lightweigth. Yaj have less than 18kb uncompressed, 8kb minified and 
 
 ## Installation
 
-By adding to your page the "yaj.min.js" or through "npm" or "yarn add yaj"
+By adding to your page the "yaj.min.js" or through "npm" or "yarn add yaj" or throught CDN:
+
+```
+https://cdn.rawgit.com/byjg/yaj/master/yaj.js
+```
+
+or 
+
+```
+https://cdn.rawgit.com/byjg/yaj/master/yaj.min.js
+```
+
+
 
 ## Yo Dom Manipulation Reference
 
