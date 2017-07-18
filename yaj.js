@@ -550,6 +550,12 @@ if (typeof Yaj === "undefined") {
                     xhr.setRequestHeader(key, options.headers[key]);
                 }
             }
+            if (options.uploadProgress) {
+                xhr.upload.onprogress = options.uploadProgress;
+            }
+            if (options.downloadProgress) {
+                xhr.onprogress = options.downloadProgress;
+            }
             xhr.onreadystatechange = function () {
                 if (this.readyState !== 4) return;
                 if (this.status !== 200) {

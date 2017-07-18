@@ -13,6 +13,16 @@ yo().request({
     },
     error: function (data, status, info) {
         console.log('Error!' + data);
+    },
+    uploadProgress: function (e) {
+        if (e.lengthComputable) {
+            console.log(e.loaded / e.total);
+        }        
+    },
+    downloadProgress: function (e) {
+        if (e.lengthComputable) {
+            console.log(e.loaded / e.total);
+        }        
     }
 });
 ```

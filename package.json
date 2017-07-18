@@ -10,7 +10,7 @@
     "test": "./node_modules/.bin/jest --coverage",
     "minify-yaj": "./node_modules/.bin/uglifyjs --compress 'drop_console,drop_debugger' --comments '/^!/i' --source-map --mangle -o yaj.min.js yaj.js",
     "minify": "npm run minify-yaj",
-    "publish-patch": "npm run minify && git add yaj.min.js && git commit -m 'Close changes for new version' && npm version patch && git push && npm publish"
+    "publish-patch": "npm version patch && git push && npm publish"
   },
   "repository": {
     "type": "git",
