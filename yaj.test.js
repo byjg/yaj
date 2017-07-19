@@ -53,6 +53,12 @@ test('Testing attr, css', () => {
     expect(selector.css('font-family')).toBe("");
     selector.css('font-family', 'Arial');
     expect(selector.css('font-family')).toBe('Arial');
+
+    expect(selector.css('font-style')).toBe("");
+    expect(selector.css('text-align')).toBe("");
+    selector.attr('style', 'font-style: bold; text-align: center');
+    expect(selector.css('font-style')).toBe("bold");
+    expect(selector.css('text-align')).toBe("center");
 });
 
 test('Testing append and remove', () => {

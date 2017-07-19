@@ -416,7 +416,17 @@ if (typeof Yaj === "undefined") {
                 if (value === undefined || value === null) {
                     return el[prop];
                 }
-                el[prop] = value;
+                if (prop === "style") {   // hack for setup attribute 'style'.
+                    var list = value.split(';');
+                    for (var i=0; i<list.length; i++) {
+                        var parts = list[i].split(':');
+                        if (parts.length === 2) {
+                            el.style[parts[0].replace(/^\s+|\s+$/g, '')] = parts[1].replace(/^\s+|\s+$/g, '');
+                        }
+                    }
+                } else {
+                    el[prop] = value;
+                }
             }, property, value);
 
             if (value === undefined || value === null) {
