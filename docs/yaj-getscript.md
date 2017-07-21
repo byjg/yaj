@@ -11,4 +11,4 @@ yo().getScript(
 );
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

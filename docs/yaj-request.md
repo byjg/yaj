@@ -45,4 +45,4 @@ It is a shortcut for yo().request('POST'); The value of data passed
 to the succefull function will be converted to JSON. 
 
 
-Go to [index](README.md)
+Go to [index](index.md)

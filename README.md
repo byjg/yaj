@@ -1,6 +1,8 @@
 # Yaj 
 [![npm](https://img.shields.io/npm/v/yaj.svg)](http://opensource.byjg.com/yaj)
 [![Build Status](https://travis-ci.org/byjg/yaj.svg?branch=master)](https://travis-ci.org/byjg/yaj)
+[![Documentation Status](https://readthedocs.org/projects/yaj/badge/?version=latest)](http://yaj.readthedocs.io/en/latest/?badge=latest)
+
 
 ## Description
 
@@ -22,5 +24,5 @@ yo('#some .selector').addClass('class').removeClass('otherclass').show();
 
 ## Documentation
 
-See the page [docs](docs/README.md) for a detailed documentation about yaj class.
+The documentation is hosted on Read the Docs at [yaj.readthedocs.io](http://yaj.readthedocs.io)
 

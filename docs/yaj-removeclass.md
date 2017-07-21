@@ -14,4 +14,4 @@ To remove all classes just pass no argument:
 yo('.myclass').removeClass();
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

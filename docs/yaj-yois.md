@@ -72,4 +72,4 @@ if (yoIsYaj(object)) {
 ```
 
 
-Go to [index](README.md)
+Go to [index](index.md)

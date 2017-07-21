@@ -6,4 +6,4 @@ Add a class to the selector
 yo('.myclass').addClass('name');
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

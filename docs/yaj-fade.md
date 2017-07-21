@@ -14,4 +14,4 @@ Fade out the element taking "ms" mileseconds
 yo('.myclass').fadeOut(1000);
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

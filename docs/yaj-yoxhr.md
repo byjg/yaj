@@ -10,4 +10,4 @@ var xhr = yoXhr();
 xhr.send();
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

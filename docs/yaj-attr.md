@@ -16,4 +16,4 @@ Set the property value into the selector;
 yo('.myclass').attr('src', '/image.png');
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

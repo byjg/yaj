@@ -9,4 +9,4 @@ yo('.myclass').on('click', function (e) {
 ```
 
 
-Go to [index](README.md)
+Go to [index](index.md)

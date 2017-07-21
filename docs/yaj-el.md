@@ -10,4 +10,4 @@ If selector returns more than one, only the first will be returned.
 yo('.myclass').el().clientWidth;
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

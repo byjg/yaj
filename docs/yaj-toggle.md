@@ -10,4 +10,4 @@ yo('.myclass').toggle();
 yo('.myclass').toggle();
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

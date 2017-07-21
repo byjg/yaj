@@ -7,4 +7,4 @@ var baseSettings = {};
 yoCopy(userSettings, baseSettings);
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

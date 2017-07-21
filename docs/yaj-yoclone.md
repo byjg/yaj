@@ -6,4 +6,4 @@ Clone an object to another
 var clonedObject = yoClone(object);
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

@@ -21,4 +21,4 @@ Set the content of the selector with data
 yo('.myclass').html('<b>text</b>');
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)

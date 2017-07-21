@@ -7,4 +7,4 @@ Hide the element. If it is not visible does nothing.
 yo('.myclass').show();
 ```
 
-Go to [index](README.md)
+Go to [index](index.md)
