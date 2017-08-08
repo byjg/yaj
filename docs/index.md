@@ -1,4 +1,4 @@
-# Yaj - Yet Another jQuery Replacement
+# Yaj.js - Yet Another jQuery Replacement
 
 ## Basic usage
 
@@ -119,6 +119,7 @@ console.log(localStorage.getItem('key'));
 - yoIs(objectToCheck, type) [ref](yaj-yois.md) - Check if the object is of the defined type.
 - yoCopy(source, dest) [ref](yaj-yocopy.md) - Copy the attributes from one object to another.
 - yoClone(object) [ref](yaj-yoclone.md) - Clone an object;
+- yoGetParameter(name) [ref](yaj-yogetparameter.md) - Get the value of the query parameter name;
 
 
 ## FAQ
