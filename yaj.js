@@ -46,7 +46,7 @@ try {
 }
 catch(e) {
     window.yajLocalStorage = 'yaj_';
-    window.localStorage = {
+    window['localStorage'] = {
         getItem: function (sKey) {
             if (!sKey || !this.hasOwnProperty(sKey)) { return null; }
             return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + yajLocalStorage + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
@@ -71,7 +71,7 @@ catch(e) {
             return (new RegExp("(?:^|;\\s*)" + yajLocalStorage + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
         }
     };
-    window.localStorage.length = (document.cookie.match(new RegExp(yajLocalStorage + '(.*?)\=', 'g')) || window.localStorage).length;
+    window['localStorage'].length = (document.cookie.match(new RegExp(yajLocalStorage + '(.*?)\=', 'g')) || window.localStorage).length;
 }
 
 /**
@@ -114,6 +114,16 @@ if (typeof Yaj === "undefined") {
 
     window.yoIsYaj = function (object) {
         return yoIs(object, 'Yaj');
+    };
+
+    window.yoGetParameter = function (name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
     };
 
     /**
@@ -411,7 +421,7 @@ if (typeof Yaj === "undefined") {
          * @param value
          * @returns {*}
          */
-        this.attr = function (property, value) {
+        this.attr = function (property, value, convertHtmlEntity) {
             this._base(function (el, prop, value) {
                 if (value === undefined || value === null) {
                     return el[prop];
@@ -425,6 +435,11 @@ if (typeof Yaj === "undefined") {
                         }
                     }
                 } else {
+                    if (convertHtmlEntity === true) {
+                        var d = document.createElement('div');
+                        d.innerHTML = value;
+                        value = d.innerText;
+                    }
                     el[prop] = value;
                 }
             }, property, value);
