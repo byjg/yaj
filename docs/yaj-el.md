@@ -8,6 +8,7 @@ If selector returns more than one, only the first will be returned.
 
 ```javascript
 yo('.myclass').el().clientWidth;
+yo('.myclass').el(n).clientWidth;  // return the n-nth element.
 ```
 
 Go to [index](index.md)

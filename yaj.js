@@ -184,8 +184,8 @@ if (typeof Yaj === "undefined") {
         /**
          * @returns {HTMLElement}
          */
-        this.el = function () {
-            return this.els(0);
+        this.el = function (n) {
+            return this.els(!n ? 0 : n);
         };
 
         /**
@@ -318,13 +318,13 @@ if (typeof Yaj === "undefined") {
          *
          * @returns {Yaj}
          */
-        this.toggle = function() {
+        this.toggle = function(callback) {
             this._base(function (el) {
                 var me = yo(el);
                 if (me.isVisible()) {
-                    me.hide();
+                    me.hide(callback);
                 } else {
-                    me.show();
+                    me.show(callback);
                 }
             });
             return this;
@@ -334,8 +334,8 @@ if (typeof Yaj === "undefined") {
          *
          * @returns {Yaj}
          */
-        this.show = function () {
-            this.fadeIn(200);
+        this.show = function (callback) {
+            this.fadeIn(200, callback);
             return this;
         };
 
@@ -343,8 +343,8 @@ if (typeof Yaj === "undefined") {
          *
          * @returns {Yaj}
          */
-        this.hide = function () {
-            this.fadeOut(200);
+        this.hide = function (callback) {
+            this.fadeOut(200, callback);
             return this;
         };
 
@@ -659,29 +659,42 @@ if (typeof Yaj === "undefined") {
          * @param type
          * @param ms
          */
-        this.fade = function (type, ms) {
-            this._base(function (el, type, ms) {
-                var isIn = type === 'in',
-                    opacity = isIn ? 0 : 1,
-                    interval = 50,
-                    duration = ms,
-                    gap = interval / duration;
+        this.fade = function (type, ms, callback) {
 
-                if (isIn) {
-                    el.style.display = 'block';
-                    el.style.opacity = opacity;
+            if (!this.element) {
+                console.log('None element');
+                return;
+            }
+
+            var isIn = type === 'in',
+                opacity = isIn ? 0 : 1,
+                interval = 50,
+                duration = ms,
+                gap = interval / duration;
+
+            if (isIn) {
+                for (var i=0; i<this.element.length; i++) {
+                    this.element[i].style.display = 'block';
+                    this.element[i].style.opacity = opacity;
+                }
+            }
+
+            function func(el, callback) {
+                opacity = isIn ? opacity + gap : opacity - gap;
+                for (var i=0; i<el.length; i++) {
+                    el[i].style.opacity = opacity;
+                    if (opacity <= 0) el[i].style.display = 'none';
                 }
 
-                function func() {
-                    opacity = isIn ? opacity + gap : opacity - gap;
-                    el.style.opacity = opacity;
-
-                    if (opacity <= 0) el.style.display = 'none';
-                    if (opacity <= 0 || opacity >= 1) window.clearInterval(fading);
+                if (opacity <= 0 || opacity >= 1) {
+                    if (callback) callback();
+                } else {
+                    window.setTimeout(function() { func(el, callback); }, interval);
                 }
+            }
 
-                var fading = window.setInterval(func, interval);
-            }, type, ms)
+            var el = this.element;
+            func(el, callback);
         };
 
         /**
@@ -689,8 +702,8 @@ if (typeof Yaj === "undefined") {
          * @param ms
          * @returns {Yaj}
          */
-        this.fadeIn = function (ms) {
-            this.fade('in', ms);
+        this.fadeIn = function (ms, callback) {
+            this.fade('in', ms, callback);
             return this;
         };
 
@@ -699,8 +712,8 @@ if (typeof Yaj === "undefined") {
          * @param ms
          * @returns {Yaj}
          */
-        this.fadeOut = function (ms) {
-            this.fade('out', ms);
+        this.fadeOut = function (ms, callback) {
+            this.fade('out', ms, callback);
             return this;
         };
 

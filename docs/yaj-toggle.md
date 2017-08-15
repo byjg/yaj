@@ -10,4 +10,12 @@ yo('.myclass').toggle();
 yo('.myclass').toggle();
 ```
 
+## yo(selector).toggle(callback)
+
+```javascript
+yo('.myclass'.toggle(function () {
+    // do something
+}))
+```
+
 Go to [index](index.md)
