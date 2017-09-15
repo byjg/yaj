@@ -32,18 +32,38 @@ Yaj is also lightweigth. Yaj have less than 18kb uncompressed, 8kb minified and 
 
 ## Installation
 
-By adding to your page the "yaj.min.js" or through "npm" or "yarn add yaj" or throught CDN:
 
-```
-https://cdn.rawgit.com/byjg/yaj/master/yaj.js
-```
+### Yarn or NPM
 
-or 
-
-```
-https://cdn.rawgit.com/byjg/yaj/master/yaj.min.js
+```bash
+yarn add yaj
 ```
 
+or
+
+```bash
+npm i yaj
+```
+
+and then:
+
+```html
+<script src="node_modules/yaj/yaj.min.js" />
+```
+
+### CDN
+
+#### Latest version
+
+```html
+<script src="https://unpkg.com/yaj/yaj.min.js" />
+```
+
+#### Specific version
+ 
+```html
+<script src="https://unpkg.com/yaj@0.1.9/yaj.min.js" />
+```
 
 
 ## Yo Dom Manipulation Reference
