@@ -524,7 +524,7 @@ if (typeof Yaj === "undefined") {
                         curtop += el.offsetTop;
                     } while (el = el.offsetParent);
                 }
-                return {left: curleft, top: curtop };
+                return {left: curleft, top: curtop, width: el.offsetWidth, height: el.offsetHeight };
             });
             return this.result;
         };
