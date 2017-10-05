@@ -141,6 +141,9 @@ console.log(localStorage.getItem('key'));
 - yoClone(object) [ref](yaj-yoclone.md) - Clone an object;
 - yoGetParameter(name) [ref](yaj-yogetparameter.md) - Get the value of the query parameter name;
 
+## Yaj is FAST
+
+Yaj is faster than JQuey. See [here](benchmark.md) the benchmark tests
 
 ## FAQ
 
