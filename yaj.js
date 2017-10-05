@@ -519,10 +519,11 @@ if (typeof Yaj === "undefined") {
                 var curleft = 0;
                 var curtop = 0;
                 if (el.offsetParent) {
+                    var elParent = el;
                     do {
-                        curleft += el.offsetLeft;
-                        curtop += el.offsetTop;
-                    } while (el = el.offsetParent);
+                        curleft += elParent.offsetLeft;
+                        curtop += elParent.offsetTop;
+                    } while (elParent = elParent.offsetParent);
                 }
                 return {left: curleft, top: curtop, width: el.offsetWidth, height: el.offsetHeight };
             });
