@@ -156,6 +156,10 @@ if (typeof Yaj === "undefined") {
         return new Yaj(element);
     };
 
+    window.yoReady = function(fn) {
+        /in/.test(document.readyState)?setTimeout(yoReady,9,fn):fn()
+    };
+
     window.yoCopy = function(source, dest) {
         for (var attrname in source) {
             dest[attrname] = source[attrname];

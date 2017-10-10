@@ -65,6 +65,9 @@ and then:
 <script src="https://unpkg.com/yaj@0.1.9/yaj.min.js" />
 ```
 
+## Yo Events 
+
+- yoReady() [ref](yaj-ready.md) - The ready method makes sure that code is only executed when all DOM elements are safe to be manipulated.
 
 ## Yo Dom Manipulation Reference
 
