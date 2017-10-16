@@ -174,7 +174,13 @@ if (typeof Yaj === "undefined") {
     var Yaj = function (element) {
 
         if (typeof element === "string") {
-            this.element = document.querySelectorAll(element);
+            try {
+                this.element = document.querySelectorAll(element);
+            } catch (e) {
+                var wrapper = document.createElement('div');
+                wrapper.innerHTML = element;
+                this.element = wrapper.childNodes;
+            }
         } else {
             this.element = [element];
         }

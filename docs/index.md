@@ -19,6 +19,8 @@ The selector can be all valid HTML5 selector:
 - HTML Elements ("p", "div", etc)
 - HTML Document (document)
 - Window (window)
+- HTML string (eg. "'<div>text</div>'")
+- List of selectors (eg. "p, span, .class")
 
 You can call more than one method in sequence:
 
