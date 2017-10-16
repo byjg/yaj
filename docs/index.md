@@ -70,7 +70,7 @@ and then:
 
 ## Yo Dom Manipulation Reference
 
-- yo(selector).el() [ref](yaj-el.md) - Get the DOMElement defined by the selector
+- yo(selector).el() [ref](yaj-el.md) - Get the first DOMElement defined by the selector
 - yo(selector).els() [ref](yaj-els.md) - Get all DOMElements defined by the selector
 - yo(selector).els(n) [ref](yaj-els.md) - Get the n-nth DOMElement defined by the selector
 - yo(selector).eq(n) [ref](yaj-eq.md) - Get the n-nth Yaj object defined by the selector;
@@ -84,7 +84,7 @@ and then:
 - yo(selector).show() [ref](yaj-show.md) - Make the selector visible
 - yo(selector).hide() [ref](yaj-hide.md) - Make the selector invsible
 - yo(selector).append(data) [ref](yaj-append.md) - Append a HTML or DOMElement to the selector
-- yo(selector-one).appendTo(selector-two) [ref](yaj-appendto.md) - Append the selector one to the selector two
+- yo(selector).appendTo(selector2) [ref](yaj-appendto.md) - Append the selector one to the selector two
 - yo(selector).remove() [ref](yaj-remove.md) - Remove the DOM Elements defined by the selector
 - yo(selector).isCollideWith(data) [ref](yaj-iscollidewith.md) - Return true if the object collides/overlaps the object referenced by data
 - yo(selector).attr(property) [ref](yaj-attr.md) - Get the property value of the selector
@@ -93,6 +93,8 @@ and then:
 - yo(selector).css(property, value) [ref](yaj-css.md) - Set the CSS style value of the selector
 - yo(selector).html() [ref](yaj-html.md) - Get the selector as HTML
 - yo(selector).html(data) [ref](yaj-html.md) - Set the content of the selector with data
+- yo(selector).children(data) [ref](yaj-children.md) - Return the first level child nodes of the current selector. 
+- yo(selector).find(data) [ref](yaj-find.md) - Find some element from the current selector.
 - yo(selector).on(event, fn) [ref](yaj-on.md) - Defines an event 
 - yo(selector).offset() [ref](yaj-offset.md) - Get the offset of the selector
 - yo(selector).scrollTo(to, duration) [ref](yaj-scrollto.md) - Scroll the object.
@@ -115,6 +117,7 @@ Yaj creates polyfill replacement for important DOM implementations like:
 - document.querySelector
 - document.querySelectorAll
 - window.localStorage (in this case the fallback is cookie which have some limitations about size and quantity)
+- Element.prototype.matches()
 
 If you add the `yaj.js` or `yaj.min.js` to your page, you can instantly use this implementations. The code below will
 work in the most modern broswers but also in browsers like IE8 and even IE7. 

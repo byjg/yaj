@@ -35,6 +35,25 @@ if (!document.querySelector) {
     };
 }
 
+
+/**
+ * Polyfill for Matches
+ */
+if (!Element.prototype.matches) {
+    Element.prototype.matches =
+        Element.prototype.matchesSelector ||
+        Element.prototype.mozMatchesSelector ||
+        Element.prototype.msMatchesSelector ||
+        Element.prototype.oMatchesSelector ||
+        Element.prototype.webkitMatchesSelector ||
+        function(s) {
+            var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                i = matches.length;
+            while (--i >= 0 && matches.item(i) !== this) {}
+            return i > -1;
+        };
+}
+
 /**
  * Polyfill for window.localStorage
  */
@@ -397,6 +416,42 @@ if (typeof Yaj === "undefined") {
                     data.appendChild(el.cloneNode(true));
                 }, data);
             }
+            return this;
+        };
+
+        /**
+         *
+         * @returns {Yaj}
+         */
+        this.children = function (data) {
+            var newElement = [];
+            for (var i=0; i<this.element.length; i++) {
+                var findR = this.element[i].children;
+                for (var j=0; j<findR.length; j++) {
+                    if (!data || findR[j].matches(data)) {
+                        newElement.push(findR[j]);
+                    }
+                }
+            }
+            this.element = newElement;
+
+            return this;
+        };
+
+        /**
+         *
+         * @returns {Yaj}
+         */
+        this.find = function (data) {
+            var newElement = [];
+            for (var i=0; i<this.element.length; i++) {
+                var findR = this.element[i].querySelectorAll(data);
+                for (var j=0; j<findR.length; j++) {
+                    newElement.push(findR[j]);
+                }
+            }
+            this.element = newElement;
+
             return this;
         };
 
