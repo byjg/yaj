@@ -270,13 +270,16 @@ if (typeof Yaj === "undefined") {
          * @returns {Yaj}
          */
         this.addClass = function(className) {
-            this._base(function(el, className) {
-                if (el.classList) {
-                    el.classList.add(className);
-                } else if (!yo(el).hasClass(className)) {
-                    el.className += " " + className;
-                }
-            }, className);
+            var classAr = className.split(' ');
+            for (var i=0; i<classAr.length; i++) {
+                this._base(function (el, className) {
+                    if (el.classList) {
+                        el.classList.add(className);
+                    } else if (!yo(el).hasClass(className)) {
+                        el.className += " " + className;
+                    }
+                }, classAr[i]);
+            }
             return this;
         };
 
@@ -286,20 +289,21 @@ if (typeof Yaj === "undefined") {
          * @returns {Yaj}
          */
         this.removeClass = function(className) {
-            this._base(function (el, className)
-            {
-                if (className === undefined || className === null) {
-                    el.className = "";
-                    return;
-                }
-                if (el.classList)
-                    el.classList.remove(className);
-                else if (yo(el).hasClass(className))
-                {
-                    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
-                    el.className = el.className.replace(reg, ' ');
-                }
-            }, className);
+            var classAr = className.split(' ');
+            for (var i=0; i<classAr.length; i++) {
+                this._base(function (el, className) {
+                    if (className === undefined || className === null) {
+                        el.className = "";
+                        return;
+                    }
+                    if (el.classList)
+                        el.classList.remove(className);
+                    else if (yo(el).hasClass(className)) {
+                        var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+                        el.className = el.className.replace(reg, ' ');
+                    }
+                }, classAr[i]);
+            }
             return this;
         };
 
