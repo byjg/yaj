@@ -84,6 +84,7 @@ and then:
 - yo(selector).show() [ref](yaj-show.md) - Make the selector visible
 - yo(selector).hide() [ref](yaj-hide.md) - Make the selector invsible
 - yo(selector).append(data) [ref](yaj-append.md) - Append a HTML or DOMElement to the selector
+- yo(selector-one).appendTo(selector-two) [ref](yaj-appendto.md) - Append the selector one to the selector two
 - yo(selector).remove() [ref](yaj-remove.md) - Remove the DOM Elements defined by the selector
 - yo(selector).isCollideWith(data) [ref](yaj-iscollidewith.md) - Return true if the object collides/overlaps the object referenced by data
 - yo(selector).attr(property) [ref](yaj-attr.md) - Get the property value of the selector

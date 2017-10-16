@@ -387,6 +387,23 @@ if (typeof Yaj === "undefined") {
          *
          * @returns {Yaj}
          */
+        this.appendTo = function (data) {
+            if (typeof data === "string") {
+                yo(data).append(this);
+            } else if (yoIsYaj(data)) {
+                data.append(this);
+            } else {
+                this._base(function (el, data) {
+                    data.appendChild(el.cloneNode(true));
+                }, data);
+            }
+            return this;
+        };
+
+        /**
+         *
+         * @returns {Yaj}
+         */
         this.remove = function () {
             this._base(function (el) {
                 el.parentNode.removeChild(el);
@@ -669,6 +686,7 @@ if (typeof Yaj === "undefined") {
          *
          * @param type
          * @param ms
+         * @param callback
          */
         this.fade = function (type, ms, callback) {
 
@@ -711,6 +729,7 @@ if (typeof Yaj === "undefined") {
         /**
          *
          * @param ms
+         * @param callback
          * @returns {Yaj}
          */
         this.fadeIn = function (ms, callback) {
@@ -721,6 +740,7 @@ if (typeof Yaj === "undefined") {
         /**
          *
          * @param ms
+         * @param callback
          * @returns {Yaj}
          */
         this.fadeOut = function (ms, callback) {
