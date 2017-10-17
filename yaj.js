@@ -250,7 +250,7 @@ if (typeof Yaj === "undefined") {
 
         /**
          *
-         * @param n
+         * @param [n]
          * @returns {HTMLElement}
          */
         Yaj.prototype.els = function (n) {
@@ -329,7 +329,7 @@ if (typeof Yaj === "undefined") {
 
         /**
          *
-         * @param className
+         * @param {String} [className]
          * @returns {Yaj}
          */
         Yaj.prototype.removeClass = function (className) {
@@ -546,9 +546,9 @@ if (typeof Yaj === "undefined") {
         /**
          *
          * @param property
-         * @param value
-         * @param convertHtmlEntity
-         * @returns {string|Yaj}
+         * @param [value]
+         * @param [convertHtmlEntity]
+         * @returns {Array|string|Yaj}
          */
         Yaj.prototype.attr = function (property, value, convertHtmlEntity) {
             if (property === "for") {
@@ -585,8 +585,8 @@ if (typeof Yaj === "undefined") {
         /**
          *
          * @param property
-         * @param value
-         * @returns {string|Yaj}
+         * @param [value]
+         * @returns {Array|string|Yaj}
          */
         Yaj.prototype.css = function (property, value) {
             this._base(function (el, prop, value) {
@@ -604,8 +604,8 @@ if (typeof Yaj === "undefined") {
 
         /**
          *
-         * @param value
-         * @returns {string|Yaj}
+         * @param [value]
+         * @returns {Array|string|Yaj}
          */
         Yaj.prototype.html = function (value) {
             this._base(function (el, value) {
@@ -623,8 +623,8 @@ if (typeof Yaj === "undefined") {
 
         /**
          *
-         * @param value
-         * @returns {string|Yaj}
+         * @param [value]
+         * @returns {Array|string|Yaj}
          */
         Yaj.prototype.text = function (value) {
             this._base(function (el, value) {
@@ -845,16 +845,21 @@ if (typeof Yaj === "undefined") {
 
         /**
          *
-         * @param href required. The CSS location
-         * @param rel optional. The rel attribute. Defaults to "stylesheet"
-         * @param type optional. The type attribute. Defaults to "text/css"
+         * @param {String|Array} href required. The CSS location
+         * @param {String} [rel] optional. The rel attribute. Defaults to "stylesheet"
+         * @param {String} [type] optional. The type attribute. Defaults to "text/css"
          */
         Yaj.loadCss = function (href, rel, type) {
-            var css = document.createElement('link');
-            css.rel = (rel ? rel : 'stylesheet');
-            css.type = (type ? type : 'text/css');
-            css.href = href;
-            document.head.appendChild(css);
+            if (!yoIsArray(href)) {
+                href = [href];
+            }
+            for (var i=0; i<href.length; i++) {
+                var css = document.createElement('link');
+                css.rel = (rel ? rel : 'stylesheet');
+                css.type = (type ? type : 'text/css');
+                css.href = href[i];
+                document.head.appendChild(css);
+            }
         };
 
         /**
