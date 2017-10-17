@@ -1,6 +1,6 @@
 ## yoReady(fn) 
 
-Run the callaback function only when the document is ready.
+The ready method makes sure that code is only executed when all DOM elements are safe to be manipulated. 
 
 ```javascript
 yoReady(function () {

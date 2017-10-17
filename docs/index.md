@@ -69,7 +69,7 @@ and then:
 
 ## Yo Events 
 
-- yoReady() [ref](yaj-ready.md) - The ready method makes sure that code is only executed when all DOM elements are safe to be manipulated.
+- yoReady() [ref](yaj-yoready.md) - The ready method makes sure that code is only executed when all DOM elements are safe to be manipulated.
 
 ## Yo Dom Manipulation Reference
 
@@ -149,7 +149,6 @@ console.log(localStorage.getItem('key'));
 ## Yo Polyfill Utilities functions
 
 - yoXhr() [ref](yaj-yoxhr.md) - Return a XmlHTTPRequest object for your current environment/browser;
-- yoReady(fn) [ref](yaj-ready.md) - Run the callaback function only when the document is ready.
 - yoIsFunction(object) [ref](yaj-yois.md) - Check if the object is a function. 
 - yoIsWindow(object) [ref](yaj-yois.md) - Check if the object is the Window.
 - yoIsArray(object) [ref](yaj-yois.md) - Check if the object is an Array.
