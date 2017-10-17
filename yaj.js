@@ -199,7 +199,7 @@ if (typeof Yaj === "undefined") {
         var _result = [];
         var _events = {};
 
-        var Yaj = function (element) {
+        function Yaj(element) {
             _result = [];
             if (typeof element === "string") {
                 try {
@@ -218,7 +218,7 @@ if (typeof Yaj === "undefined") {
             } else {
                 this.element = [element];
             }
-        };
+        }
 
         Yaj.prototype._base = function (method, prop1, prop2, prop3) {
             var bool = false;
