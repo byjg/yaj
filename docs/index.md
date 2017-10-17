@@ -74,8 +74,11 @@ and then:
 - yo(selector).els() [ref](yaj-els.md) - Get all DOMElements defined by the selector
 - yo(selector).els(n) [ref](yaj-els.md) - Get the n-nth DOMElement defined by the selector
 - yo(selector).eq(n) [ref](yaj-eq.md) - Get the n-nth Yaj object defined by the selector;
+- yo(selector).first() [ref](yaj-first.md) - Get the first node returned by the selector;
+- yo(selector).last() [ref](yaj-last.md) - Get the last node returned by the selector;
 - yo(selector).hasClass(class) [ref](yaj-hasclass.md) - Check if the selector has the class.
 - yo(selector).isVisible() [ref](yaj-isvisible.md) - Return true if the 'selector exists.
+- yo(selector).exists() [ref](yaj-exists.md) - Return true if the selector exists (or was found)
 - yo(selector).addClass(class) [ref](yaj-addclass.md) - Add a class to the selector
 - yo(selector).removeClass [ref](yaj-removeclass.md) - Remove all classes from the selector
 - yo(selector).removeClass(class) [ref](yaj-removeclass.md) - Remove a class from the selector
@@ -89,26 +92,33 @@ and then:
 - yo(selector).isCollideWith(data) [ref](yaj-iscollidewith.md) - Return true if the object collides/overlaps the object referenced by data
 - yo(selector).attr(property) [ref](yaj-attr.md) - Get the property value of the selector
 - yo(selector).attr(property, value) [ref](yaj-attr.md) - Set the property value into the selector;
+- yo(selector).attr(property, value, convertHtmlEntity) [ref](yaj-attr.md) - Set the property value converting HTML Entity into the selector;
 - yo(selector).css(property) [ref](yaj-css.md) - Get the CSS style value of the selector
 - yo(selector).css(property, value) [ref](yaj-css.md) - Set the CSS style value of the selector
-- yo(selector).html() [ref](yaj-html.md) - Get the selector as HTML
+- yo(selector).html() [ref](yaj-html.md) - Get the selector content as HTML
 - yo(selector).html(data) [ref](yaj-html.md) - Set the content of the selector with data
+- yo(selector).text() [ref](yaj-text.md) - Get the selector content as TEXT
+- yo(selector).text(data) [ref](yaj-text.md) - Set the content of the selector with data without parse the HTML
 - yo(selector).children(data) [ref](yaj-children.md) - Return the first level child nodes of the current selector. 
 - yo(selector).find(data) [ref](yaj-find.md) - Find some element from the current selector.
-- yo(selector).on(event, fn) [ref](yaj-on.md) - Defines an event 
+- yo(selector).on(event, fn) [ref](yaj-on.md) - Attach an event to an element 
+- yo(selector).bind(event, fn) [ref](yaj-on.md) - Attach a custom event to an element 
+- yo(selector).trigger(event) [ref](yaj-on.md) - Trigger a custom event 
 - yo(selector).offset() [ref](yaj-offset.md) - Get the offset of the selector
 - yo(selector).scrollTo(to, duration) [ref](yaj-scrollto.md) - Scroll the object.
 - yo(selector).fadeIn(ms) [ref](yaj-fade.md) - Fade in the element
 - yo(selector).fadeOut(ms) [ref](yaj-fade.md) - Fade out the element
+- Yaj.isElementInDocument(element) [ref](yaj-iselementindocument.md) - Return true if the element is attached to the document
 
 ## Yo Ajax Reference
 
-- yo().get(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request
-- yo().post(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request
-- yo().request(options) [ref](yaj-request.md) - Make an ajax request. You can choose the method  
-- yo().getJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request and returns a JSON object.
-- yo().postJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request and returns a JSON object.
-- yo().getScript(src, func) [ref](yaj-getscript.md) - Load a javascript
+- Yaj.get(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request
+- Yaj.post(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request
+- Yaj.request(options) [ref](yaj-request.md) - Make an ajax request. You can choose the method  
+- Yaj.getJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax GET request and returns a JSON object.
+- Yaj.postJson(url, data, success, error) [ref](yaj-request.md) - Make an ajax POST request and returns a JSON object.
+- Yaj.getScript(src, func) [ref](yaj-getscript.md) - Load a javascript dynamically
+- Yaj.loadCss(href, rel, type) [ref](yaj-loadcss.md) - Loads a CSS dynamically and append it to the document.
 
 ## Yo Polyfill replacement
 
@@ -136,6 +146,7 @@ console.log(localStorage.getItem('key'));
 ## Yo Polyfill Utilities functions
 
 - yoXhr() [ref](yaj-yoxhr.md) - Return a XmlHTTPRequest object for your current environment/browser;
+- yoReady(fn) [ref](yaj-ready.md) - Run the callaback function only when the document is ready.
 - yoIsFunction(object) [ref](yaj-yois.md) - Check if the object is a function. 
 - yoIsWindow(object) [ref](yaj-yois.md) - Check if the object is the Window.
 - yoIsArray(object) [ref](yaj-yois.md) - Check if the object is an Array.
@@ -149,7 +160,7 @@ console.log(localStorage.getItem('key'));
 
 ## Yaj is FAST
 
-Yaj is faster than JQuey. See [here](benchmark.md) the benchmark tests
+Yaj is faster than JQuery. See [here](benchmark.md) the benchmark tests
 
 ## FAQ
 

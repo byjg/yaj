@@ -1,9 +1,9 @@
-## yo().request(method, url, data, success, error) 
+## Yaj.request(method, url, data, success, error) 
 
 Makes an ajax request. This is the most customizable option. 
 
 ```javascript
-yo().request({
+Yaj.request({
     method: 'PUT',
     url: 'http://someurl',
     headers: {},
@@ -26,22 +26,32 @@ yo().request({
     }
 });
 ```
-## yo().get(url, data, success, error) 
+## Yaj.get(url, data, success, error) 
 
-It is a shortcut for yo().request('GET'); 
+It is a shortcut for Yaj.request('GET'); 
 
-## yo().post(url, data, success, error) 
+```javascript
+Yaj.get(
+    'http://www.example.com/rest',
+    null,
+    function (data) {
+        console.log(data);
+    }
+)
+```
 
-It is a shortcut for yo().request('POST'); 
+## Yaj.post(url, data, success, error) 
 
-## yo().getJson(url, data, success, error) 
+It is a shortcut for Yaj.request('POST'); 
 
-It is a shortcut for yo().request('GET'); The value of data passed 
+## Yaj.getJson(url, data, success, error) 
+
+It is a shortcut for Yaj.request('GET'); The value of data passed 
 to the succefull function will be converted to JSON. 
 
-## yo().postJson(url, data, success, error) 
+## Yaj.postJson(url, data, success, error) 
 
-It is a shortcut for yo().request('POST'); The value of data passed 
+It is a shortcut for Yaj.request('POST'); The value of data passed 
 to the succefull function will be converted to JSON. 
 
 

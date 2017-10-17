@@ -145,17 +145,6 @@ if (typeof Yaj === "undefined") {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     };
 
-    window.isElementInDocument = function (element) {
-        if (element === document) {
-            return true;
-        }
-        element = element.parentNode;
-        if (element) {
-            return isElementInDocument(element);
-        }
-        return false;
-    };
-
     /**
      *
      * @returns {XMLHttpRequest}
@@ -184,6 +173,10 @@ if (typeof Yaj === "undefined") {
 
     window.yo = function(element) {
         return new Yaj(element);
+    };
+
+    window.yoReady = function(fn) {
+        /in/.test(document.readyState)?setTimeout(yoReady,9,fn):fn()
     };
 
     window.yoCopy = function(source, dest) {
@@ -551,6 +544,7 @@ if (typeof Yaj === "undefined") {
          *
          * @param property
          * @param value
+         * @param convertHtmlEntity
          * @returns {string|Yaj}
          */
         Yaj.prototype.attr = function (property, value, convertHtmlEntity) {
@@ -692,7 +686,7 @@ if (typeof Yaj === "undefined") {
          */
         Yaj.prototype.trigger = function (event) {
             if (!_events[event]) {
-                console.log('None events defined!')
+                console.log('None event is defined!');
                 return this;
             }
             this._base(function (el, event) {
@@ -814,6 +808,25 @@ if (typeof Yaj === "undefined") {
 
         /**
          *
+         * @param element
+         * @return {boolean}
+         */
+        Yaj.isElementInDocument = function (element) {
+            if (yoIsYaj(element)) {
+                element = element.el();
+            }
+            if (element === document) {
+                return true;
+            }
+            element = element.parentNode;
+            if (element) {
+                return Yaj.isElementInDocument(element);
+            }
+            return false;
+        };
+
+        /**
+         *
          * @param src
          * @param func
          */
@@ -825,6 +838,20 @@ if (typeof Yaj === "undefined") {
                 script.onload = func;
             }
             document.getElementsByTagName("head")[0].appendChild(script);
+        };
+
+        /**
+         *
+         * @param href required. The CSS location
+         * @param rel optional. The rel attribute. Defaults to "stylesheet"
+         * @param type optional. The type attribute. Defaults to "text/css"
+         */
+        Yaj.loadCss = function (href, rel, type) {
+            var css = document.createElement('link');
+            css.rel = (rel ? rel : 'stylesheet');
+            css.type = (type ? type : 'text/css');
+            css.href = href;
+            document.head.appendChild(css);
         };
 
         /**

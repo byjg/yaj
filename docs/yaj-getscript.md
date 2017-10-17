@@ -1,9 +1,9 @@
-## yo().getScript(src, func) 
+## Yaj.getScript(src, func) 
 
-Loads a JavaScript. If successfull loaded call func.
+Loads a JavaScript dynamically. If successfull loaded call func.
 
 ```javascript
-yo().getScript(
+Yaj.getScript(
     'http://someurl/file.js',
     function () {
         console.log('Success!');

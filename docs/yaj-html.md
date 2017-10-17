@@ -1,6 +1,6 @@
 ## yo(selector).html() 
 
-Get the selector as HTML
+Get the selector content as HTML
 
 
 ```html
