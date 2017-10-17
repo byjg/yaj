@@ -333,10 +333,13 @@ if (typeof Yaj === "undefined") {
          * @returns {Yaj}
          */
         Yaj.prototype.removeClass = function (className) {
+            if (className === undefined || className === null) {
+                className = "";
+            }
             var classAr = className.split(' ');
             for (var i = 0; i < classAr.length; i++) {
                 this._base(function (el, className) {
-                    if (className === undefined || className === null) {
+                    if (className.trim() === "") {
                         el.className = "";
                         return;
                     }
