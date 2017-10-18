@@ -50,7 +50,8 @@ suite.add('Yaj', function() {
 //  teardown();
 //})
 .add('jQuery', function() {
-  $("li").hide(function () {
+  // The only way to get the same behavior is using jQuery promisse.
+  $.when($("li").hide()).done(function(){
     $("li").show();
   });
   teardown();
