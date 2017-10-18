@@ -1,6 +1,6 @@
 ## yo(selector).fadeIn(ms) 
 
-Fade in the element taking "ms" mileseconds 
+Fade in (show) the element taking "ms" mileseconds 
 
 ```javascript
 yo('.myclass').fadeIn(1000);
@@ -8,21 +8,25 @@ yo('.myclass').fadeIn(1000);
 
 ## yo(selector).fadeIn(ms, callback)
 
+The callback function will fired **once** only after the "fadeIn" action is ended.
+
 ```javascript
-yo('.myclass'.toggle(500, function () {
+yo('.myclass'.fadeIn(500, function () {
     // do something
 }))
 ```
 
 ## yo(selector).fadeOut(ms) 
 
-Fade out the element taking "ms" mileseconds 
+Fade out (hide) the element taking "ms" mileseconds 
 
 ```javascript
 yo('.myclass').fadeOut(1000);
 ```
 
 ## yo(selector).fadeOut(ms, callback)
+
+The callback function will fired **once** only after the "fadeOut" action is ended.
 
 ```javascript
 yo('.myclass'.fadeOut(500, function () {

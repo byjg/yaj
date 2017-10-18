@@ -2,15 +2,21 @@
 
 Show the element if it is visible or hide if not. 
 
+```html
+<div class="myclass"></div>
+```
+
 ```javascript
-// Show the element
+// Hide the element
 yo('.myclass').toggle();
 
-// call it again hide it
+// call it again to show it
 yo('.myclass').toggle();
 ```
 
 ## yo(selector).toggle(callback)
+
+The callback function will fired **once** only after the "toggle" action is ended.
 
 ```javascript
 yo('.myclass'.toggle(function () {

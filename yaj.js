@@ -220,6 +220,13 @@ if (typeof Yaj === "undefined") {
             }
         }
 
+        function _isVisible(el) {
+            if (el === undefined || el === null) {
+                return false;
+            }
+            return !!( el.offsetWidth || el.offsetHeight || el.getClientRects().length );
+        }
+
         Yaj.prototype._base = function (method, prop1, prop2, prop3) {
             var bool = false;
             var results = [];
@@ -292,12 +299,7 @@ if (typeof Yaj === "undefined") {
          * @returns {boolean}
          */
         Yaj.prototype.isVisible = function () {
-            return this._base(function (el) {
-                if (el === undefined || el === null) {
-                    return false;
-                }
-                return !!( el.offsetWidth || el.offsetHeight || el.getClientRects().length );
-            });
+            return this._base(_isVisible);
         };
 
         /**
@@ -897,36 +899,53 @@ if (typeof Yaj === "undefined") {
             }
 
             var isIn = type === 'in',
-                opacity = isIn ? 0 : 1,
                 interval = 50,
                 duration = ms,
                 gap = interval / duration;
 
-            if (isIn) {
-                for (var i = 0; i < this.element.length; i++) {
-                    this.element[i].style.display = 'block';
-                    this.element[i].style.opacity = opacity;
-                }
-            }
+            var count = 0;
+            var total = this.element.length;
 
-            function func(el, callback) {
+            function func(el, opacity, checkEnd) {
                 opacity = isIn ? opacity + gap : opacity - gap;
-                for (var i = 0; i < el.length; i++) {
-                    el[i].style.opacity = opacity;
-                    if (opacity <= 0) el[i].style.display = 'none';
-                }
+                el.style.opacity = opacity;
+                if (opacity <= 0) el.style.display = 'none';
 
                 if (opacity <= 0 || opacity >= 1) {
-                    if (callback) callback();
+                    checkEnd();
                 } else {
                     window.setTimeout(function () {
-                        func(el, callback);
+                        func(el, opacity, checkEnd);
                     }, interval);
                 }
             }
 
-            var el = this.element;
-            func(el, callback);
+            function checkEnd() {
+                count++;
+                if (count >= total) {
+                    if (callback) callback();
+                }
+            }
+
+            for (var i = 0; i < this.element.length; i++) {
+                var opacity = isIn ? 0 : 1;
+                if (isIn) {
+                    if (_isVisible(this.element[i])) {
+                        continue;
+                    }
+                    this.element[i].style.display = this.element[i]['yo-original-display'] || "";
+                    this.element[i].style.opacity = opacity;
+                } else if (!_isVisible(this.element[i])) {
+                    continue;
+                } else {
+                    this.element[i]['yo-original-display'] = this.element[i].style.display;
+                }
+                (function (el, opacity) {
+                    setTimeout(function () {
+                        func(el, opacity, checkEnd)
+                    }, 1);
+                }(this.element[i], opacity))
+            }
         };
 
         /**
