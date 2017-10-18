@@ -299,7 +299,7 @@ if (typeof Yaj === "undefined") {
          * @returns {boolean}
          */
         Yaj.prototype.isVisible = function () {
-            return this._base(_isVisible(el));
+            return this._base(_isVisible);
         };
 
         /**
