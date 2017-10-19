@@ -38,6 +38,7 @@ if (!document.querySelector) {
 
 /**
  * Polyfill for Matches
+ * @global Element
  */
 if (!Element.prototype.matches) {
     Element.prototype.matches =
@@ -49,13 +50,16 @@ if (!Element.prototype.matches) {
         function(s) {
             var matches = (this.document || this.ownerDocument).querySelectorAll(s),
                 i = matches.length;
-            while (--i >= 0 && matches.item(i) !== this) {}
+            while (--i >= 0 && matches.item(i) !== this) {
+                // Try find. Empty loop;
+            }
             return i > -1;
         };
 }
 
 /**
  * Polyfill for window.localStorage
+ * @global yajLocalStorage
  */
 try {
     var storage = window['localStorage'],
@@ -95,6 +99,7 @@ catch(e) {
 
 /**
  * Starting defining Yaj
+ * @global Yaj
  */
 if (typeof Yaj === "undefined") {
 
@@ -136,38 +141,57 @@ if (typeof Yaj === "undefined") {
     };
 
     window.yoGetParameter = function (name, url) {
-        if (!url) url = window.location.href;
+        if (!url) {
+            url = window.location.href;
+        }
         name = name.replace(/[\[\]]/g, "\\$&");
         var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
             results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
+        if (!results) {
+            return null;
+        }
+        if (!results[2]) {
+            return '';
+        }
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     };
 
     /**
-     *
-     * @returns {XMLHttpRequest}
+     * @global ActiveXObject
+     * @returns {XMLHttpRequest|ActiveXObject}
      */
     window.yoXhr = function() {
         try {
             return new XMLHttpRequest();
-        } catch (e) {}
+        } catch (e) {
+            // There is no exists Xhr object. Try next.
+        }
         try {
             return new ActiveXObject("Msxml3.XMLHTTP");
-        } catch (e) {}
+        } catch (e) {
+            // There is no exists Xhr object. Try next.
+        }
         try {
             return new ActiveXObject("Msxml2.XMLHTTP.6.0");
-        } catch (e) {}
+        } catch (e) {
+            // There is no exists Xhr object. Try next.
+        }
         try {
             return new ActiveXObject("Msxml2.XMLHTTP.3.0");
-        } catch (e) {}
+        } catch (e) {
+            // There is no exists Xhr object. Try next.
+        }
         try {
             return new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {}
+        } catch (e) {
+            // There is no exists Xhr object. Try next.
+        }
         try {
             return new ActiveXObject("Microsoft.XMLHTTP");
-        } catch (e) {}
+        } catch (e) {
+            // There is no Xhr compatible element existing here.
+            // Fallback to default error message
+        }
         throw new Error("This browser does not support XMLHttpRequest.");
     };
 
@@ -175,21 +199,32 @@ if (typeof Yaj === "undefined") {
         return new Yaj(element);
     };
 
+    /**
+     * @global yoReady
+     * @param fn
+     */
     window.yoReady = function(fn) {
         /in/.test(document.readyState)?setTimeout(yoReady,9,fn):fn()
     };
 
     window.yoCopy = function(source, dest) {
         for (var attrname in source) {
+            if (! source.hasOwnProperty(attrname)) {
+                continue;
+            }
             dest[attrname] = source[attrname];
         }
     };
 
     window.yoClone = function(obj) {
-        if (null === obj || "object" !== typeof obj) return obj;
+        if (null === obj || "object" !== typeof obj) {
+            return obj;
+        }
         var copy = obj.constructor();
         for (var attr in obj) {
-            if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+            if (obj.hasOwnProperty(attr)) {
+                copy[attr] = obj[attr];
+            }
         }
         return copy;
     };
@@ -289,8 +324,9 @@ if (typeof Yaj === "undefined") {
          */
         Yaj.prototype.hasClass = function (className) {
             return this._base(function (el, className) {
-                if (el.classList)
+                if (el.classList) {
                     return el.classList.contains(className);
+                }
                 return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
             }, className);
         };
@@ -345,8 +381,9 @@ if (typeof Yaj === "undefined") {
                         el.className = "";
                         return;
                     }
-                    if (el.classList)
+                    if (el.classList) {
                         el.classList.remove(className);
+                    }
                     else if (yo(el).hasClass(className)) {
                         var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
                         el.className = el.className.replace(reg, ' ');
@@ -428,6 +465,7 @@ if (typeof Yaj === "undefined") {
                 for (var i = 0; i < children.length; i++) {
                     el.appendChild(children[i].cloneNode(true));
                 }
+                return undefined;
             }, data);
             return this;
         };
@@ -576,6 +614,7 @@ if (typeof Yaj === "undefined") {
                     }
                     el[prop] = value;
                 }
+                return undefined;
             }, property, value);
 
             if (value === undefined || value === null) {
@@ -596,6 +635,7 @@ if (typeof Yaj === "undefined") {
                     return el.style[prop];
                 }
                 el.style[prop] = value;
+                return undefined;
             }, property, value);
 
             if (value === undefined || value === null) {
@@ -615,6 +655,7 @@ if (typeof Yaj === "undefined") {
                     return el.innerHTML;
                 }
                 el.innerHTML = value;
+                return undefined;
             }, value);
 
             if (value === undefined || value === null) {
@@ -634,6 +675,7 @@ if (typeof Yaj === "undefined") {
                     return el.innerText;
                 }
                 el.innerText = value;
+                return undefined;
             }, value);
 
             if (value === undefined || value === null) {
@@ -701,12 +743,11 @@ if (typeof Yaj === "undefined") {
          */
         Yaj.prototype.trigger = function (event) {
             if (!_events[event]) {
-                console.log('None event is defined!');
+                // None event is defined!
                 return this;
             }
             this._base(function (el, event) {
                 // Dispatch the event.
-                console.log('Dispatching');
                 el.dispatchEvent(_events[event]);
             }, event);
             return this;
@@ -769,12 +810,17 @@ if (typeof Yaj === "undefined") {
         /**
          *
          * @param options
+         * @global yoXhr
          */
         Yaj.request = function (options) {
             var xhr = new yoXhr();
             xhr.open(options.method, options.url, true);
             if (options.headers) {
                 for (var key in options.headers) {
+                    // Skip keys from the prototype.
+                    if (!options.headers.hasOwnProperty(key)) {
+                        continue;
+                    }
                     xhr.setRequestHeader(key, options.headers[key]);
                 }
             }
@@ -785,7 +831,9 @@ if (typeof Yaj === "undefined") {
                 xhr.onprogress = options.downloadProgress;
             }
             xhr.onreadystatechange = function () {
-                if (this.readyState !== 4) return;
+                if (this.readyState !== 4) {
+                    return;
+                }
                 if (this.status !== 200) {
                     yoIsFunction(options.error) && options.error(this.responseText, this.statusText, this)
                 } else {
@@ -882,13 +930,17 @@ if (typeof Yaj === "undefined") {
          */
         Yaj.prototype.scrollTo = function (to, duration) {
             this._base(function (element, to, duration) {
-                if (duration <= 0) return;
+                if (duration <= 0) {
+                    return;
+                }
                 var difference = to - element.scrollTop;
                 var perTick = difference / duration * 10;
 
                 setTimeout(function () {
                     element.scrollTop = element.scrollTop + perTick;
-                    if (element.scrollTop === to) return;
+                    if (element.scrollTop === to) {
+                        return;
+                    }
                     yo(element).scrollTo(to, duration - 10);
                 }, 10);
             }, to, duration);
@@ -903,11 +955,12 @@ if (typeof Yaj === "undefined") {
          */
         Yaj.prototype.fade = function (type, ms, callback) {
 
+            // None element was found
             if (!this.element) {
-                console.log('None element');
                 return;
             }
 
+            // Check if is fadeIn or fadeOut and set default variables
             var isIn = type === 'in',
                 interval = 50,
                 duration = ms,
@@ -916,10 +969,13 @@ if (typeof Yaj === "undefined") {
             var count = 0;
             var total = this.element.length;
 
+            // Recursive function to do the fade
             function func(el, opacity, checkEnd) {
                 opacity = isIn ? opacity + gap : opacity - gap;
                 el.style.opacity = opacity;
-                if (opacity <= 0) el.style.display = 'none';
+                if (opacity <= 0) {
+                    el.style.display = 'none';
+                }
 
                 if (opacity <= 0 || opacity >= 1) {
                     checkEnd();
@@ -930,13 +986,17 @@ if (typeof Yaj === "undefined") {
                 }
             }
 
+            // Check when ALL elements finish the transformation and call the callback
             function checkEnd() {
                 count++;
                 if (count >= total) {
-                    if (callback) callback();
+                    if (callback) {
+                        callback();
+                    }
                 }
             }
 
+            // Prepare the fade. Define the start situation and call the recursive function
             for (var i = 0; i < this.element.length; i++) {
                 var opacity = isIn ? 0 : 1;
                 if (isIn) {
