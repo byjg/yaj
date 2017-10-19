@@ -663,6 +663,16 @@ if (typeof Yaj === "undefined") {
             return this;
         };
 
+        Yaj.prototype.off = function () {
+            this._base(function (element) {
+                var clone = element.cloneNode();
+                while (element.firstChild) {
+                    clone.appendChild(element.firstChild);
+                }
+                element.parentNode.replaceChild(clone, element);
+            });
+        };
+
         /**
          *
          * @param event
@@ -931,11 +941,13 @@ if (typeof Yaj === "undefined") {
                 var opacity = isIn ? 0 : 1;
                 if (isIn) {
                     if (_isVisible(this.element[i])) {
+                        checkEnd();
                         continue;
                     }
-                    this.element[i].style.display = this.element[i]['yo-original-display'] || "";
+                    this.element[i].style.display = this.element[i]['yo-original-display'] || "block";
                     this.element[i].style.opacity = opacity;
                 } else if (!_isVisible(this.element[i])) {
+                    checkEnd();
                     continue;
                 } else {
                     this.element[i]['yo-original-display'] = this.element[i].style.display;

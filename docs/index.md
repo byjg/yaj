@@ -107,6 +107,7 @@ and then:
 - yo(selector).on(event, fn) [ref](yaj-on.md) - Attach an event to an element 
 - yo(selector).bind(event, fn) [ref](yaj-on.md) - Attach a custom event to an element 
 - yo(selector).trigger(event) [ref](yaj-on.md) - Trigger a custom event 
+- yo(selector).off() [ref](yaj-off.md) - Remove all events attached to the element
 - yo(selector).offset() [ref](yaj-offset.md) - Get the offset of the selector
 - yo(selector).scrollTo(to, duration) [ref](yaj-scrollto.md) - Scroll the object.
 - yo(selector).fadeIn(ms) [ref](yaj-fade.md) - Fade in the element
