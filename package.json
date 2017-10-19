@@ -1,6 +1,6 @@
 {
   "name": "yaj",
-  "version": "0.1.13",
+  "version": "1.0.0",
   "description": "Yaj.js - Yet another jQuery replacement",
   "main": "yaj.js",
   "directories": {
