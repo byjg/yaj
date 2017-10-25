@@ -53,7 +53,22 @@ and then:
 <script src="node_modules/yaj/yaj.min.js" />
 ```
 
-### CDN
+### CDN JSDELIVR
+
+#### Latest version
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/yaj@1/yaj.min.js" />
+```
+
+#### Specific version
+ 
+```html
+<script src="https://cdn.jsdelivr.net/npm/yaj@1.0.1/yaj.min.js" />
+```
+
+
+### CDN UNPKG
 
 #### Latest version
 
@@ -64,7 +79,7 @@ and then:
 #### Specific version
  
 ```html
-<script src="https://unpkg.com/yaj@0.1.9/yaj.min.js" />
+<script src="https://unpkg.com/yaj@1.0.1/yaj.min.js" />
 ```
 
 ## Yo Events 
