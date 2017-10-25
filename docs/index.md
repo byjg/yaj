@@ -64,7 +64,7 @@ and then:
 #### Specific version
  
 ```html
-<script src="https://cdn.jsdelivr.net/npm/yaj@1.0.1/yaj.min.js" />
+<script src="https://cdn.jsdelivr.net/npm/yaj@1.0.3/yaj.min.js" />
 ```
 
 
