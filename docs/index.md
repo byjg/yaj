@@ -1,4 +1,8 @@
 # Yaj.js - Yet Another jQuery Replacement
+[![](https://data.jsdelivr.com/v1/package/npm/yaj/badge?style=rounded)](https://www.jsdelivr.com/package/npm/yaj)
+[![npm](https://img.shields.io/npm/v/yaj.svg)](http://opensource.byjg.com/yaj)
+[![Build Status](https://travis-ci.org/byjg/yaj.svg?branch=master)](https://travis-ci.org/byjg/yaj)
+[![Documentation Status](https://readthedocs.org/projects/yaj/badge/?version=latest)](http://yaj.readthedocs.io/en/latest/?badge=latest)
 
 ## Basic usage
 
