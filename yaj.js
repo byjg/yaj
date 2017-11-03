@@ -112,7 +112,11 @@ if (typeof Yaj === "undefined") {
         var getType = {};
         return objectToCheck
             && (getType.toString.call(objectToCheck).match(new RegExp('\\[object ' + type + '\\]')) !== null
-                || objectToCheck.constructor.name.match(new RegExp(type)) !== null
+                || (
+                    objectToCheck.constructor &&
+                    objectToCheck.constructor.name &&
+                    objectToCheck.constructor.name.match(new RegExp(type)) !== null
+                )
             );
     };
 
