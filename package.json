@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jest --coverage",
+    "test": "./node_modules/.bin/jest --coverage --testEnvironment jsdom --testURL http://localhost/",
     "minify-yaj": "./node_modules/.bin/uglifyjs --compress 'drop_console,drop_debugger' --comments '/^!/i' --source-map -o yaj.min.js yaj.js",
     "minify": "npm run minify-yaj",
     "publish-patch": "npm test && npm run minify-yaj && git add yaj.min.* && git commit -m 'minify' && npm version patch && git push && git push --tags && npm publish"

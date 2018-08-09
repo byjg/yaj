@@ -48,7 +48,7 @@ test('Testing attr, css', () => {
     var selector = yo('#test');
     expect(selector.attr('src')).toBe("");
     selector.attr('src', '/some-image.png');
-    expect(selector.attr('src')).toBe('/some-image.png');
+    expect(selector.attr('src')).toBe("http://localhost/some-image.png");
 
     expect(selector.css('font-family')).toBe("");
     selector.css('font-family', 'Arial');
