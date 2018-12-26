@@ -6,8 +6,6 @@
 [![Documentation Status](https://readthedocs.org/projects/yaj/badge/?version=latest)](http://yaj.readthedocs.io/en/latest/?badge=latest)
 
 
-## Description
-
 Yaj is a achronymous of "Yet Another jQuery Replacement". This intend to be a very lightweigth script 
 (less than 3kb minified and gzipped) and have the most used jQuery methods as a polyfill class supporting 
 since IE6 to the modern browsers. 
@@ -24,7 +22,7 @@ For example:
 yo('#some .selector').addClass('class').removeClass('otherclass').show();
 ```
 
-## Documentation
+# Documentation
 
 The documentation is hosted on Read the Docs at [yaj.readthedocs.io](http://yaj.readthedocs.io)
 
