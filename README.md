@@ -1,10 +1,11 @@
 # Yaj.js
-[![](https://data.jsdelivr.com/v1/package/npm/yaj/badge?style=rounded)](https://www.jsdelivr.com/package/npm/yaj)
-[![](https://readthedocs.org/projects/yaj/badge/?version=latest)](https://yaj.readthedocs.io/)
-[![npm](https://img.shields.io/npm/v/yaj.svg)](http://opensource.byjg.com/yaj)
-[![Build Status](https://travis-ci.org/byjg/yaj.svg?branch=master)](https://travis-ci.org/byjg/yaj)
-[![Documentation Status](https://readthedocs.org/projects/yaj/badge/?version=latest)](http://yaj.readthedocs.io/en/latest/?badge=latest)
 
+[![Build Status](https://github.com/byjg/yaj/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/byjg/yaj/actions/workflows/build.yml)
+[![Opensource ByJG](https://img.shields.io/badge/opensource-byjg-success.svg)](http://opensource.byjg.com)
+[![GitHub source](https://img.shields.io/badge/Github-source-informational?logo=github)](https://github.com/byjg/yaj/)
+[![GitHub license](https://img.shields.io/github/license/byjg/yaj.svg)](https://opensource.byjg.com/opensource/licensing.html)
+[![GitHub release](https://img.shields.io/github/release/byjg/yaj.svg)](https://github.com/byjg/yaj/releases/)
+[![](https://data.jsdelivr.com/v1/package/npm/yaj/badge)](https://www.jsdelivr.com/package/npm/yaj)
 
 Yaj is a achronymous of "Yet Another jQuery Replacement". This intend to be a very lightweigth script 
 (less than 3kb minified and gzipped) and have the most used jQuery methods as a polyfill class supporting 
@@ -22,7 +23,9 @@ For example:
 yo('#some .selector').addClass('class').removeClass('otherclass').show();
 ```
 
-# Documentation
+## Documentation
 
-The documentation is hosted on Read the Docs at [yaj.readthedocs.io](http://yaj.readthedocs.io)
+The documentation is hosted on Read the Docs at [opensource.byjg.com](https://opensource.byjg.com/js/yaj.html)
 
+----
+[Open source ByJG](http://opensource.byjg.com)

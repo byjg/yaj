@@ -1,8 +1,11 @@
 # Yaj.js - Yet Another jQuery Replacement
-[![](https://data.jsdelivr.com/v1/package/npm/yaj/badge?style=rounded)](https://www.jsdelivr.com/package/npm/yaj)
-[![npm](https://img.shields.io/npm/v/yaj.svg)](http://opensource.byjg.com/yaj)
-[![Build Status](https://travis-ci.org/byjg/yaj.svg?branch=master)](https://travis-ci.org/byjg/yaj)
-[![Documentation Status](https://readthedocs.org/projects/yaj/badge/?version=latest)](http://yaj.readthedocs.io/en/latest/?badge=latest)
+
+[![Build Status](https://github.com/byjg/yaj/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/byjg/yaj/actions/workflows/build.yml)
+[![Opensource ByJG](https://img.shields.io/badge/opensource-byjg-success.svg)](http://opensource.byjg.com)
+[![GitHub source](https://img.shields.io/badge/Github-source-informational?logo=github)](https://github.com/byjg/yaj/)
+[![GitHub license](https://img.shields.io/github/license/byjg/yaj.svg)](https://opensource.byjg.com/opensource/licensing.html)
+[![GitHub release](https://img.shields.io/github/release/byjg/yaj.svg)](https://github.com/byjg/yaj/releases/)
+[![](https://data.jsdelivr.com/v1/package/npm/yaj/badge)](https://www.jsdelivr.com/package/npm/yaj)
 
 ## Basic usage
 
