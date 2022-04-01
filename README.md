@@ -25,7 +25,7 @@ yo('#some .selector').addClass('class').removeClass('otherclass').show();
 
 ## Documentation
 
-The documentation is hosted on Read the Docs at [opensource.byjg.com](https://opensource.byjg.com/js/yaj.html)
+[opensource.byjg.com/js/yaj](https://opensource.byjg.com/js/yaj/)
 
 ----
 [Open source ByJG](http://opensource.byjg.com)
