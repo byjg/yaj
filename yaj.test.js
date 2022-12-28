@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 var Yaj = require('yaj');
 
 beforeEach(() => {

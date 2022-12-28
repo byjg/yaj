@@ -26,12 +26,10 @@
   "bugs": {
     "url": "https://github.com/byjg/yaj/issues"
   },
-  "dependencies": {
-    "xmlhttprequest": "^1.8.0"
-  },
   "devDependencies": {
     "benchmark": "^2.1.4",
-    "jest": "^24.9.0",
-    "uglify-js": "^3.8.0"
+    "jest": "^29.1.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "uglify-js": "^3.17.4"
   }
 }
