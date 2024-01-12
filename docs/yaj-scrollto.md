@@ -1,4 +1,4 @@
-## yo(selector).scrollTo(to, duration)
+# yo(selector).scrollTo(to, duration)
 
 Scroll the element to the position "to" and the duration in mileseconds
 

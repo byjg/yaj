@@ -1,4 +1,4 @@
-## yo(selector).isVisible()
+# yo(selector).isVisible()
 
 Return true if the selector isVisible. 
 

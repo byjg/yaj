@@ -1,4 +1,4 @@
-## yoCopy(source, dest)
+# yoCopy(source, dest)
 
 Copy the properties from the source object to the destination object 
 

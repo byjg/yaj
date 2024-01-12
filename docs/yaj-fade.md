@@ -1,3 +1,5 @@
+# yo(selector).fadeIn()/.fadeOut()
+
 ## yo(selector).fadeIn(ms) 
 
 Fade in (show) the element taking "ms" mileseconds 

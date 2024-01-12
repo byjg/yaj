@@ -1,4 +1,4 @@
-## yo(selector).appendTo(selector2)
+# yo(selector).appendTo(selector2)
 
 Append the element defined by the selector to the element defined by selector2.  
 

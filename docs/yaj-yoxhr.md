@@ -1,4 +1,4 @@
-## yoXhr()
+# yoXhr()
 
 Return a XmlHTTPRequest object for your current environment/browser;  
 

@@ -1,3 +1,5 @@
+# yo(selector).text() 
+
 ## yo(selector).text() 
 
 Get the selector content as TEXT

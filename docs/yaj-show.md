@@ -1,3 +1,5 @@
+# yo(selector).show()
+
 ## yo(selector).show()
 
 Show the element. If it is visible does nothing. 

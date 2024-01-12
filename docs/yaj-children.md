@@ -1,4 +1,4 @@
-## yo(selector).children(data)
+# yo(selector).children(data)
 
 Return the first level child nodes of the current selector. Optionally can filter using a selector.  
 

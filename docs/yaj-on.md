@@ -1,4 +1,4 @@
-## yo(selector).on(event, fn) 
+# yo(selector).on(event, fn) 
 
 Attach an event to the selector
 

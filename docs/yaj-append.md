@@ -1,4 +1,4 @@
-## yo(selector).append(data)
+# yo(selector).append(data)
 
 Append a element or string to the element.  
 

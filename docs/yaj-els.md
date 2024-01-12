@@ -1,3 +1,5 @@
+# yo(selector).els()
+
 ## yo(selector).els()
 
 Retrieve all the HTML Elements defined by the selector. 
@@ -15,7 +17,7 @@ Retrieve the n-nth HTML Element defined by the selector.
 
 If the n-nth does not exists or if it is higher than the last one it will return null;
 
-0 <= n < length
+`0 <= n < length`
 
 ```javascript
 yo('.myclass').els(3).clientWidth;

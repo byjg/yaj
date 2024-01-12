@@ -1,4 +1,4 @@
-## yoGetParameter(name)
+# yoGetParameter(name)
 
 Get the value of the query parameter 'name'.
 

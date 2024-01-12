@@ -1,4 +1,4 @@
-## yo(selector).off() 
+# yo(selector).off() 
 
 Remove all events attached to the element
 

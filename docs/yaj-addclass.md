@@ -1,4 +1,4 @@
-## yo(selector).addClass(class)
+# yo(selector).addClass(class)
 
 Add a class to the selector
 

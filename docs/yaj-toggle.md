@@ -1,3 +1,5 @@
+# yo(selector).toggle()
+
 ## yo(selector).toggle()
 
 Show the element if it is visible or hide if not. 
@@ -14,7 +16,7 @@ yo('.myclass').toggle();
 yo('.myclass').toggle();
 ```
 
-## yo(selector).toggle(callback)
+# yo(selector).toggle(callback)
 
 The callback function will fired **once** only after the "toggle" action is ended.
 

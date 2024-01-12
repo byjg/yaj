@@ -1,4 +1,4 @@
-## yo(selector).exists()
+# yo(selector).exists()
 
 Return true if the selector exists (or was found); 
 

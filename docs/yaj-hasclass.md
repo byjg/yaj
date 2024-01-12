@@ -1,4 +1,4 @@
-## yo(selector).hasClass(class)
+# yo(selector).hasClass(class)
 
 Return true if the selector has the class defined. 
 

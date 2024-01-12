@@ -1,4 +1,4 @@
-## yo(selector).el()
+# yo(selector).el()
 
 Retrieve the HTML Element defined by the selector. 
 

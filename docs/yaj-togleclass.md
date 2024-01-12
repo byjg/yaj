@@ -1,4 +1,4 @@
-## yo(selector).toggleClass(class)
+# yo(selector).toggleClass(class)
 
 Add a class if it does not exists or remove if exists
 

@@ -1,3 +1,5 @@
+# yoIs()
+
 ## yoIs(objectToCheck, type)
 
 yoIs() is a function (not object) and can check any type of object.

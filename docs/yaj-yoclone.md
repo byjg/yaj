@@ -1,4 +1,4 @@
-## yoClone(object)
+# yoClone(object)
 
 Clone an object to another 
 

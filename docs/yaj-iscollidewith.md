@@ -1,4 +1,4 @@
-## yo(selector).collideWith(data)
+# yo(selector).collideWith(data)
 
 Return true if an object collides or overlaps the object defined by data
 

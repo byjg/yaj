@@ -1,4 +1,4 @@
-## yoReady(fn) 
+# yoReady(fn) 
 
 The ready method makes sure that code is only executed when all DOM elements are safe to be manipulated. 
 

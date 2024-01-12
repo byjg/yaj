@@ -1,4 +1,4 @@
-## yo(selector).last() 
+# yo(selector).last() 
 
 Get the last node returned by the selector;
 

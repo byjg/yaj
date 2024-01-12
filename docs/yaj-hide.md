@@ -1,3 +1,5 @@
+# yo(selector).hide()
+
 ## yo(selector).hide()
 
 Hide the element. If it is not visible does nothing. 

@@ -1,4 +1,4 @@
-## yo(selector).remove()
+# yo(selector).remove()
 
 Remove the DOM Elements defined by the selector;  
 

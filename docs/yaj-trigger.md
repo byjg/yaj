@@ -1,4 +1,4 @@
-## yo(selector).trigger(event) 
+# yo(selector).trigger(event) 
 
 Trigger a custom event defined previously by yo(selector).bind()[ref](yaj-bind.md).
 

@@ -1,4 +1,4 @@
-## yo(selector).offset() 
+# yo(selector).offset() 
 
 Return an object with the current dimensions
 

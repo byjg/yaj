@@ -1,3 +1,5 @@
+# yo(selector).css()
+
 ## yo(selector).css(style) 
 
 Get the style value of the selector

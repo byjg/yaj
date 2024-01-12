@@ -1,3 +1,5 @@
+# yo(selector).removeClass()
+
 ## yo(selector).removeClass(class)
 
 Remove a class from the selector;

@@ -1,4 +1,4 @@
-## yo(selector).find(data)
+# yo(selector).find(data)
 
 Find some element from the current selector  
 
