@@ -17,4 +17,4 @@ myObj.trigger('some-user-event');
 ```
 
 
-Go to [index](index.md)
+Go to [index](toc.md)

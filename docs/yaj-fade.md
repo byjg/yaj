@@ -36,4 +36,4 @@ yo('.myclass'.fadeOut(500, function () {
 }))
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

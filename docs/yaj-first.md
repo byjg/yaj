@@ -6,4 +6,4 @@ Get the first node returned by the selector;
 yo('p').first();
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

@@ -11,4 +11,4 @@ yo('.myclass').el().clientWidth;
 yo('.myclass').el(n).clientWidth;  // return the n-nth element.
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

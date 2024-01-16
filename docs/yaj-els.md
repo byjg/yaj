@@ -24,4 +24,4 @@ yo('.myclass').els(3).clientWidth;
 ```
 
 
-Go to [index](index.md)
+Go to [index](toc.md)

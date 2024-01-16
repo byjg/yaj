@@ -11,4 +11,4 @@ console.log(offset.width);
 ```
 
 
-Go to [index](index.md)
+Go to [index](toc.md)

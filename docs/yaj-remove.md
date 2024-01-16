@@ -6,4 +6,4 @@ Remove the DOM Elements defined by the selector;
 yo('.myclass').remove();
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

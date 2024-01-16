@@ -31,4 +31,4 @@ yo('input').attr('value', 'f&eacute;')
 yo('input').attr('value', 'ok&aacute;', true)
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

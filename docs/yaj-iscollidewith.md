@@ -7,4 +7,4 @@ Return true if an object collides or overlaps the object defined by data
 yo('.myclass').isCollideWith(yo('.other'));
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

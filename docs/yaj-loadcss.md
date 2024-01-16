@@ -12,4 +12,4 @@ Yaj.loadCss('http://someurl/file.css');
  - type: The type attribute. Defaults to "text/css"
 
 
-Go to [index](index.md)
+Go to [index](toc.md)

@@ -10,4 +10,4 @@ If selector does not exists or if it is higher than the last one it will return 
 yo('p').eq(2).html('changed only the third');
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

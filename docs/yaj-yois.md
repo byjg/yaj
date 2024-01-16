@@ -74,4 +74,4 @@ if (yoIsYaj(object)) {
 ```
 
 
-Go to [index](index.md)
+Go to [index](toc.md)

@@ -31,7 +31,7 @@ yarn test
 
 ## Documentation
 
-[opensource.byjg.com/js/yaj](https://opensource.byjg.com/js/yaj/)
+[List of commands](docs/toc.md)
 
 ----
 [Open source ByJG](http://opensource.byjg.com)

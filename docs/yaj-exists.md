@@ -8,4 +8,4 @@ if (yo('#myid').exists()) {
 }
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

@@ -23,4 +23,4 @@ Set the content of the selector with data without parse the HTML
 yo('.myclass').text('<p>Other Text</p>');
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

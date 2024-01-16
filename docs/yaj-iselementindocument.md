@@ -14,4 +14,4 @@ yo('.someselector').append(newElement);
 Yaj.isElementInDocument(yo('#myId'));
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

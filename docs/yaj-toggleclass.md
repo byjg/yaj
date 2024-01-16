@@ -14,4 +14,4 @@ yo('.myclass').toggleClass('name');
 yo('.myclass').toggleClass('name');
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

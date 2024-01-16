@@ -15,4 +15,4 @@ var q = yoGetParameter('query1'); // Will return 'test'
 var t = yoGetParameter('query2'); // will retorn 'anothertest'
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

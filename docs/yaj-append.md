@@ -14,4 +14,4 @@ yo('.myclass').append(document.body);
 yo('.myclass').append(document.getElementById('element'));
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

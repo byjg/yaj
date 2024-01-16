@@ -55,4 +55,4 @@ It is a shortcut for Yaj.request('POST'); The value of data passed
 to the succefull function will be converted to JSON. 
 
 
-Go to [index](index.md)
+Go to [index](toc.md)

@@ -16,4 +16,4 @@ Set the style value into the selector;
 yo('.myclass').css('font-family', 'Arial');
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

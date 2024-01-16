@@ -11,4 +11,4 @@ Yaj.getScript(
 );
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

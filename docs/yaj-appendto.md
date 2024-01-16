@@ -21,4 +21,4 @@ yo('#one').appendTo(yo('#two'));
 yo('<span>text</span>').appendTo('#someElement');
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)

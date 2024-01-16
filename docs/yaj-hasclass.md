@@ -12,4 +12,4 @@ if (yo('#myid').hasClass('myclass') {
 };
 ```
 
-Go to [index](index.md)
+Go to [index](toc.md)
