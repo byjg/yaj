@@ -1,7 +1,11 @@
-# yo(selector).bind(event, fn) 
+---
+sidebar_position: 27
+---
 
-Attach a custom event to the selector. Different from the yo(selector).on()[ref](yaj-on.md)
-this event must by triggered by the method yo(selector).trigger()[ref](yaj-trigger.md).
+# yo(selector).bind(event, fn)
+
+Attach a custom event to the selector. Different from [yo(selector).on()](yaj-on.md),
+this event must by triggered by the method [yo(selector).trigger()](yaj-trigger.md).
 
 See the example:
 
@@ -15,6 +19,3 @@ myObj.bind('some-user-event', function (e) {
 // Trigger the event:
 myObj.trigger('some-user-event');
 ```
-
-
-Go to [index](toc.md)

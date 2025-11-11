@@ -1,3 +1,7 @@
+---
+sidebar_position: 12
+---
+
 # yo(selector).toggleClass(class)
 
 Add a class if it does not exists or remove if exists
@@ -13,5 +17,3 @@ yo('.myclass').toggleClass('name');
 // call it again remove the class "name"
 yo('.myclass').toggleClass('name');
 ```
-
-Go to [index](toc.md)

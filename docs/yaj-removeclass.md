@@ -1,3 +1,7 @@
+---
+sidebar_position: 11
+---
+
 # yo(selector).removeClass()
 
 ## yo(selector).removeClass(class)
@@ -11,9 +15,7 @@ yo('.myclass').removeClass('name');
 ## yo(selector).removeClass()
 
 To remove all classes just pass no argument:
- 
+
 ```javascript
 yo('.myclass').removeClass();
 ```
-
-Go to [index](toc.md)

@@ -1,4 +1,8 @@
-# yo(selector).on(event, fn) 
+---
+sidebar_position: 26
+---
+
+# yo(selector).on(event, fn)
 
 Attach an event to the selector
 
@@ -7,6 +11,3 @@ yo('.myclass').on('click', function (e) {
     console.log('Clicked');
 });
 ```
-
-
-Go to [index](toc.md)
