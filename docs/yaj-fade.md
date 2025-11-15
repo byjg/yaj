@@ -1,6 +1,12 @@
-## yo(selector).fadeIn(ms) 
+---
+sidebar_position: 32
+---
 
-Fade in (show) the element taking "ms" mileseconds 
+# yo(selector).fadeIn() / .fadeOut()
+
+## yo(selector).fadeIn(ms)
+
+Fade in (show) the element taking "ms" milliseconds
 
 ```javascript
 yo('.myclass').fadeIn(1000);
@@ -16,9 +22,9 @@ yo('.myclass'.fadeIn(500, function () {
 }))
 ```
 
-## yo(selector).fadeOut(ms) 
+## yo(selector).fadeOut(ms)
 
-Fade out (hide) the element taking "ms" mileseconds 
+Fade out (hide) the element taking "ms" milliseconds
 
 ```javascript
 yo('.myclass').fadeOut(1000);
@@ -33,5 +39,3 @@ yo('.myclass'.fadeOut(500, function () {
     // do something
 }))
 ```
-
-Go to [index](index.md)

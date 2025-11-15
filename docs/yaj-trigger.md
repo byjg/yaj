@@ -1,12 +1,13 @@
-## yo(selector).trigger(event) 
+---
+sidebar_position: 28
+---
 
-Trigger a custom event defined previously by yo(selector).bind()[ref](yaj-bind.md).
+# yo(selector).trigger(event)
+
+Trigger a custom event defined previously by [yo(selector).bind()](yaj-bind.md).
 
 See the example:
 
 ```javascript
 yo('.myClass').trigger('some-user-event');
 ```
-
-
-Go to [index](index.md)

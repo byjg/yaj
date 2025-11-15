@@ -1,4 +1,10 @@
-## yo(selector).attr(property) 
+---
+sidebar_position: 20
+---
+
+# yo(selector).attr()
+
+## yo(selector).attr(property)
 
 Get the property value of the selector
 
@@ -7,7 +13,7 @@ Get the property value of the selector
 var prop = yo('.myclass').attr('src');
 ```
 
-## yo(selector).attr(property, value) 
+## yo(selector).attr(property, value)
 
 Set the property value into the selector;
 
@@ -16,17 +22,15 @@ Set the property value into the selector;
 yo('.myclass').attr('src', '/image.png');
 ```
 
-## yo(selector).attr(property, value, convertHtmlEntity) 
+## yo(selector).attr(property, value, convertHtmlEntity)
 
-If the value "convertHtmlEntity" is set to "true" then Yaj will try convert 
+If the value "convertHtmlEntity" is set to "true" then Yaj will try convert
 the html entity values into the proper value in the current code page
 
 ```javascript
-// The example below will set 'f&eacute;' in the input value; 
+// The example below will set 'f&eacute;' in the input value;
 yo('input').attr('value', 'f&eacute;')
 
-// But this example will set 'fé' in the input value; 
+// But this example will set 'fé' in the input value;
 yo('input').attr('value', 'ok&aacute;', true)
 ```
-
-Go to [index](index.md)

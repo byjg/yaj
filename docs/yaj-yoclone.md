@@ -1,9 +1,11 @@
-## yoClone(object)
+---
+sidebar_position: 40
+---
 
-Clone an object to another 
+# yoClone(object)
+
+Clone an object to another
 
 ```javascript
 var clonedObject = yoClone(object);
 ```
-
-Go to [index](index.md)

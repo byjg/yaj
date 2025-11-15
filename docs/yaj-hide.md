@@ -1,9 +1,15 @@
+---
+sidebar_position: 15
+---
+
+# yo(selector).hide()
+
 ## yo(selector).hide()
 
-Hide the element. If it is not visible does nothing. 
+Hide the element. If it is not visible does nothing.
 
 ```javascript
-// Show the element
+// Hide the element
 yo('.myclass').hide();
 ```
 
@@ -16,5 +22,3 @@ yo('.myclass'.hide(function () {
     // do something
 }))
 ```
-
-Go to [index](index.md)

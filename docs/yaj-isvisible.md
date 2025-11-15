@@ -1,8 +1,12 @@
-## yo(selector).isVisible()
+---
+sidebar_position: 8
+---
 
-Return true if the selector isVisible. 
+# yo(selector).isVisible()
 
-If the selector is hidden *or* does not exists returns false; 
+Return true if the selector isVisible.
+
+If the selector is hidden *or* does not exists returns false;
 
 If selector returns more than one, returns true for the first occurrence
 
@@ -11,5 +15,3 @@ if (yo('#myid').isVisible()) {
     console.log('Visible');
 };
 ```
-
-Go to [index](index.md)

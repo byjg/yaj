@@ -1,6 +1,10 @@
-## yo(selector).hasClass(class)
+---
+sidebar_position: 7
+---
 
-Return true if the selector has the class defined. 
+# yo(selector).hasClass(class)
+
+Return true if the selector has the class defined.
 
 If selector does not exists returns false;
 
@@ -11,5 +15,3 @@ if (yo('#myid').hasClass('myclass') {
     console.log('Exists');
 };
 ```
-
-Go to [index](index.md)
