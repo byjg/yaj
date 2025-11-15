@@ -1,7 +1,10 @@
-## Yaj.isElementInDocument(element)
+---
+sidebar_position: 33
+---
+
+# Yaj.isElementInDocument(element)
 
 Return true if the element is attached to the document or false otherwise.
-
 
 ```javascript
 var newElement = yo('<div>').attr('id', 'myId');
@@ -13,5 +16,3 @@ Yaj.isElementInDocument(newElement);
 yo('.someselector').append(newElement);
 Yaj.isElementInDocument(yo('#myId'));
 ```
-
-Go to [index](toc.md)

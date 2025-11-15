@@ -1,9 +1,12 @@
-# yo(selector).text() 
+---
+sidebar_position: 23
+---
 
-## yo(selector).text() 
+# yo(selector).text()
+
+## yo(selector).text()
 
 Get the selector content as TEXT
-
 
 ```html
 <div class="myclass"><span class="title">Some Text</span></div>
@@ -14,7 +17,7 @@ Get the selector content as TEXT
 var content = yo('.myclass').text();
 ```
 
-## yo(selector).text(data) 
+## yo(selector).text(data)
 
 Set the content of the selector with data without parse the HTML
 
@@ -22,5 +25,3 @@ Set the content of the selector with data without parse the HTML
 // Will set only the text "<p>Other Text</p>" without parse the HTML
 yo('.myclass').text('<p>Other Text</p>');
 ```
-
-Go to [index](toc.md)

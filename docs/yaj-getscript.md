@@ -1,6 +1,10 @@
-## Yaj.getScript(src, func) 
+---
+sidebar_position: 35
+---
 
-Loads a JavaScript dynamically. If successfull loaded call func.
+# Yaj.getScript(src, func)
+
+Loads a JavaScript dynamically. If successfully loaded call func.
 
 ```javascript
 Yaj.getScript(
@@ -10,5 +14,3 @@ Yaj.getScript(
     }
 );
 ```
-
-Go to [index](toc.md)

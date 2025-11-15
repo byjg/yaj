@@ -1,6 +1,10 @@
+---
+sidebar_position: 37
+---
+
 # yoXhr()
 
-Return a XmlHTTPRequest object for your current environment/browser;  
+Return a XmlHTTPRequest object for your current environment/browser;
 
 Does not use it directly. Prefer to use some [request methods](yaj-request.md)
 
@@ -9,5 +13,3 @@ var xhr = yoXhr();
 //...
 xhr.send();
 ```
-
-Go to [index](toc.md)

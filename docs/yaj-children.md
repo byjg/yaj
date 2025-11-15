@@ -1,17 +1,21 @@
+---
+sidebar_position: 24
+---
+
 # yo(selector).children(data)
 
-Return the first level child nodes of the current selector. Optionally can filter using a selector.  
+Return the first level child nodes of the current selector. Optionally can filter using a selector.
 
 ```html
 <ul>
     <li class="a"></li>
     <li class="b">
         <li class="b1">
-            <li class="b1-1"></li>    
-            <li class="b1-2"></li>    
+            <li class="b1-1"></li>
+            <li class="b1-2"></li>
             <li class="special">level-b</li>
-        </li>    
-        <li class="b2"></li>    
+        </li>
+        <li class="b2"></li>
     </li>
     <li class="c">
         <li class="special">level-c</li>
@@ -23,9 +27,7 @@ Return the first level child nodes of the current selector. Optionally can filte
 // <li class="b1"> and <li class="b2">
 yo('.b').children();
 
-// Optinally you can filter: 
+// Optinally you can filter:
 yo('.b').children('.b2');
 </script>
 ```
-
-Go to [index](toc.md)

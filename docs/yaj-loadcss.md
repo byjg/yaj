@@ -1,4 +1,8 @@
-## Yaj.loadCss(href, rel, type) 
+---
+sidebar_position: 36
+---
+
+# Yaj.loadCss(href, rel, type)
 
 Loads a CSS dynamically and append it to the document.
 
@@ -6,10 +10,9 @@ Loads a CSS dynamically and append it to the document.
 Yaj.loadCss('http://someurl/file.css');
 ```
 
-*Note:* The parameters rel and type are optional:
- 
- - rel: The rel attribute. Defaults to "stylesheet"
- - type: The type attribute. Defaults to "text/css"
+:::info
+The parameters rel and type are optional:
 
-
-Go to [index](toc.md)
+- rel: The rel attribute. Defaults to "stylesheet"
+- type: The type attribute. Defaults to "text/css"
+:::

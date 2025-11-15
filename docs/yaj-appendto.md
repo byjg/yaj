@@ -1,6 +1,10 @@
+---
+sidebar_position: 17
+---
+
 # yo(selector).appendTo(selector2)
 
-Append the element defined by the selector to the element defined by selector2.  
+Append the element defined by the selector to the element defined by selector2.
 
 **Append one element to another:**
 
@@ -15,10 +19,8 @@ yo('#one').appendTo(yo('#two'));
 </script>
 ```
 
-**Create element and append to another** 
+**Create element and append to another**
 
 ```javascript
 yo('<span>text</span>').appendTo('#someElement');
 ```
-
-Go to [index](toc.md)

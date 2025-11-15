@@ -1,8 +1,12 @@
+---
+sidebar_position: 13
+---
+
 # yo(selector).toggle()
 
 ## yo(selector).toggle()
 
-Show the element if it is visible or hide if not. 
+Show the element if it is visible or hide if not.
 
 ```html
 <div class="myclass"></div>
@@ -16,7 +20,7 @@ yo('.myclass').toggle();
 yo('.myclass').toggle();
 ```
 
-# yo(selector).toggle(callback)
+## yo(selector).toggle(callback)
 
 The callback function will fired **once** only after the "toggle" action is ended.
 
@@ -25,5 +29,3 @@ yo('.myclass'.toggle(function () {
     // do something
 }))
 ```
-
-Go to [index](toc.md)

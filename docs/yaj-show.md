@@ -1,8 +1,12 @@
+---
+sidebar_position: 14
+---
+
 # yo(selector).show()
 
 ## yo(selector).show()
 
-Show the element. If it is visible does nothing. 
+Show the element. If it is visible does nothing.
 
 ```javascript
 // Show the element
@@ -18,5 +22,3 @@ yo('.myclass').show(function () {
     // do something
 })
 ```
-
-Go to [index](toc.md)

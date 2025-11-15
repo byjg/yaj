@@ -1,8 +1,12 @@
+---
+sidebar_position: 3
+---
+
 # yo(selector).els()
 
 ## yo(selector).els()
 
-Retrieve all the HTML Elements defined by the selector. 
+Retrieve all the HTML Elements defined by the selector.
 
 If selector does not exists returns null;
 
@@ -13,7 +17,7 @@ console.log(elements.length);
 
 ## yo(selector).els(n)
 
-Retrieve the n-nth HTML Element defined by the selector. 
+Retrieve the n-nth HTML Element defined by the selector.
 
 If the n-nth does not exists or if it is higher than the last one it will return null;
 
@@ -22,6 +26,3 @@ If the n-nth does not exists or if it is higher than the last one it will return
 ```javascript
 yo('.myclass').els(3).clientWidth;
 ```
-
-
-Go to [index](toc.md)

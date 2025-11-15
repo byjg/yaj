@@ -1,3 +1,7 @@
+---
+sidebar_position: 42
+---
+
 # Benchmarking
 
 Yaj is faster than jQuery on query select elements.
@@ -46,7 +50,7 @@ document.querySelector x 510,361 ops/sec ±0.86% (58 runs sampled)
 jQuery x 70,284 ops/sec ±1.14% (59 runs sampled)
 ```
 
-The native querySelector is the fatest and the Yaj is the second on line.
+The native querySelector is the fastest and the Yaj is the second on line.
 
 **Firefox**
 
@@ -62,4 +66,4 @@ jQuery x 37,486 ops/sec ±1.43% (59 runs sampled)
 Fastest is document.querySelector
 ```
 
-The native querySelector is the fatest and the Yaj is the second on line.
+The native querySelector is the fastest and the Yaj is the second on line.

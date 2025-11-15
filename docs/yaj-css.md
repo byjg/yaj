@@ -1,6 +1,10 @@
+---
+sidebar_position: 21
+---
+
 # yo(selector).css()
 
-## yo(selector).css(style) 
+## yo(selector).css(style)
 
 Get the style value of the selector
 
@@ -8,12 +12,10 @@ Get the style value of the selector
 var value = yo('.myclass').css('font-family');
 ```
 
-## yo(selector).css(style, value) 
+## yo(selector).css(style, value)
 
 Set the style value into the selector;
 
 ```javascript
 yo('.myclass').css('font-family', 'Arial');
 ```
-
-Go to [index](toc.md)
