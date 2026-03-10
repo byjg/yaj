@@ -1,3 +1,7 @@
+---
+tags: [node.js, javascript]
+---
+
 # Yaj.js - Yet Another jQuery Replacement
 
 [![Build Status](https://github.com/byjg/yaj/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/byjg/yaj/actions/workflows/build.yml)
